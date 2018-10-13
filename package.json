@@ -49,6 +49,8 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "concurrently": "^4.0.1",
+    "ganache-cli": "^6.1.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
@@ -60,7 +62,9 @@
     "uport-connect": "^0.7.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "concurrently \"node scripts/start.js\" \"npm run start-ganache\" \"npm run deploy-contracts\"",
+    "start-ganache": "ganache-cli -m \"fortune cherry broom april game spice produce flight piece sunny gather silly\"",
+    "deploy-contracts": "truffle migrate",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
