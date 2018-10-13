@@ -41,14 +41,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50610660806100206000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063113a857f1461005157806394eeb7e2146100fa575b600080fd5b34801561005d57600080fd5b506100b8600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610163565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010657600080fd5b50610161600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506101fb565b005b60006001826040518082805190602001908083835b60208310151561019d5780518252602082019150602081019050602083039250610178565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6102048161057b565b151561029e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001807f4120707265736372697074696f6e2068617368206d7573742062652070726f7681526020017f696465640000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b6000816040518082805190602001908083835b6020831015156102d657805182526020820191506020810190506020830392506102b1565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060009054906101000a900460ff161515156103b2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260288152602001807f54686520707265736372697074696f6e206861736820697320616c726561647981526020017f20696e207573652e00000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b806001826040518082805190602001908083835b6020831015156103eb57805182526020820191506020810190506020830392506103c6565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600001908051906020019061043492919061058f565b50336001826040518082805190602001908083835b60208310151561046e5780518252602082019150602081019050602083039250610449565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060016000826040518082805190602001908083835b60208310151561051c57805182526020820191506020810190506020830392506104f7565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060006101000a81548160ff02191690831515021790555060026000815480929190600101919050555050565b600060608290506000815111915050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106105d057805160ff19168380011785556105fe565b828001600101855582156105fe579182015b828111156105fd5782518255916020019190600101906105e2565b5b50905061060b919061060f565b5090565b61063191905b8082111561062d576000816000905550600101610615565b5090565b905600a165627a7a723058209367fe888ea53fab2336baea9a3582bff2d23fad9a56dea08e23d5f0184f72e50029",
-  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063113a857f1461005157806394eeb7e2146100fa575b600080fd5b34801561005d57600080fd5b506100b8600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610163565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010657600080fd5b50610161600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506101fb565b005b60006001826040518082805190602001908083835b60208310151561019d5780518252602082019150602081019050602083039250610178565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6102048161057b565b151561029e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001807f4120707265736372697074696f6e2068617368206d7573742062652070726f7681526020017f696465640000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b6000816040518082805190602001908083835b6020831015156102d657805182526020820191506020810190506020830392506102b1565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060009054906101000a900460ff161515156103b2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260288152602001807f54686520707265736372697074696f6e206861736820697320616c726561647981526020017f20696e207573652e00000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b806001826040518082805190602001908083835b6020831015156103eb57805182526020820191506020810190506020830392506103c6565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600001908051906020019061043492919061058f565b50336001826040518082805190602001908083835b60208310151561046e5780518252602082019150602081019050602083039250610449565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060016000826040518082805190602001908083835b60208310151561051c57805182526020820191506020810190506020830392506104f7565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060006101000a81548160ff02191690831515021790555060026000815480929190600101919050555050565b600060608290506000815111915050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106105d057805160ff19168380011785556105fe565b828001600101855582156105fe579182015b828111156105fd5782518255916020019190600101906105e2565b5b50905061060b919061060f565b5090565b61063191905b8082111561062d576000816000905550600101610615565b5090565b905600a165627a7a723058209367fe888ea53fab2336baea9a3582bff2d23fad9a56dea08e23d5f0184f72e50029",
-  "sourceMap": "121:1608:1:-;;;726:26;8:9:-1;5:2;;;30:1;27;20:12;5:2;726:26:1;121:1608;;;;;;",
-  "deployedSourceMap": "121:1608:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1560:166;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1560:166:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;932:616;;8:9:-1;5:2;;;30:1;27;20:12;5:2;932:616:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1560:166;1641:7;1668:14;1683:16;1668:32;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1668:32:1;;;;;;;;;;;;;;;;;;;;;:50;;;;;;;;;;;;1661:57;;1560:166;;;:::o;932:616::-;1013:39;1035:16;1013:21;:39::i;:::-;1005:88;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1154:24;1179:16;1154:42;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1154:42:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1153:43;1145:96;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1306:16;1254:14;1269:16;1254:32;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1254:32:1;;;;;;;;;;;;;;;;;;;;;:49;;:68;;;;;;;;;;;;:::i;:::-;;1386:10;1333:14;1348:16;1333:32;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1333:32:1;;;;;;;;;;;;;;;;;;;;;:50;;;:63;;;;;;;;;;;;;;;;;;1462:4;1417:24;1442:16;1417:42;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1417:42:1;;;;;;;;;;;;;;;;;;;;;;:49;;;;;;;;;;;;;;;;;;1532:6;;:8;;;;;;;;;;;;;932:616;:::o;514:204::-;581:4;598:32;639:5;598:47;;708:1;679:19;:26;:30;671:39;;514:204;;;;:::o;121:1608::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.23;\r\n\r\n/// The purpose of this contract is to track a prescription and validate\r\n/// its integrity\r\ncontract PrescriptionsRegistry {\r\n    \r\n\t// This will incurr in double storage, but we must ensure the hashes are not reused\r\n\tmapping(string => bool) private _prescriptionHashesInUse;\r\n\tmapping(string => Prescription) private _prescriptions;\r\n\t\r\n    uint256 private _count;\r\n\t\r\n    struct Prescription {\r\n        string PrescriptionHash;\r\n        address PrescriberAddress;\r\n    }\r\n    \r\n    function stringNotNullNorEmpty(string value) private pure returns (bool) {\r\n        bytes memory tempEmptyStringTest = bytes(value); // Uses memory\r\n        return (tempEmptyStringTest.length > 0);\r\n    }\r\n\r\n    constructor() public {\r\n\t}\r\n\t\r\n    /// This method creates a ledger in the chain for all Rx\r\n    /// The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource\r\n\tfunction createPrescription(string prescriptionHash) public {\r\n\r\n        require(stringNotNullNorEmpty(prescriptionHash), 'A prescription hash must be provided');\r\n\r\n        // Require the hash is unique\r\n        require(!_prescriptionHashesInUse[prescriptionHash], 'The prescription hash is already in use.');\r\n\r\n        _prescriptions[prescriptionHash].PrescriptionHash = prescriptionHash;\r\n        _prescriptions[prescriptionHash].PrescriberAddress = msg.sender;\r\n        \r\n        _prescriptionHashesInUse[prescriptionHash] = true;\r\n        \r\n        // This takes the problem of the count\r\n\t    _count++;\r\n    }\r\n    \r\n    function getPrescriptionPrescriber(string prescriptionHash) public view returns (address) {\r\n        return _prescriptions[prescriptionHash].PrescriberAddress;\r\n    }\r\n}",
-  "sourcePath": "C:\\Personal\\Hackathon\\Pharma-Sign\\contracts\\PrescriptionsRegistry.sol",
+  "bytecode": "0x608060405234801561001057600080fd5b50610660806100206000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063113a857f1461005157806394eeb7e2146100fa575b600080fd5b34801561005d57600080fd5b506100b8600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610163565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010657600080fd5b50610161600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506101fb565b005b60006001826040518082805190602001908083835b60208310151561019d5780518252602082019150602081019050602083039250610178565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6102048161057b565b151561029e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001807f4120707265736372697074696f6e2068617368206d7573742062652070726f7681526020017f696465640000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b6000816040518082805190602001908083835b6020831015156102d657805182526020820191506020810190506020830392506102b1565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060009054906101000a900460ff161515156103b2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260288152602001807f54686520707265736372697074696f6e206861736820697320616c726561647981526020017f20696e207573652e00000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b806001826040518082805190602001908083835b6020831015156103eb57805182526020820191506020810190506020830392506103c6565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600001908051906020019061043492919061058f565b50336001826040518082805190602001908083835b60208310151561046e5780518252602082019150602081019050602083039250610449565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060016000826040518082805190602001908083835b60208310151561051c57805182526020820191506020810190506020830392506104f7565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060006101000a81548160ff02191690831515021790555060026000815480929190600101919050555050565b600060608290506000815111915050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106105d057805160ff19168380011785556105fe565b828001600101855582156105fe579182015b828111156105fd5782518255916020019190600101906105e2565b5b50905061060b919061060f565b5090565b61063191905b8082111561062d576000816000905550600101610615565b5090565b905600a165627a7a72305820712bd9eaf6a0476e3ca35edc387257be6f077d29ed69390af0fdcdff9797e6a40029",
+  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063113a857f1461005157806394eeb7e2146100fa575b600080fd5b34801561005d57600080fd5b506100b8600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610163565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010657600080fd5b50610161600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506101fb565b005b60006001826040518082805190602001908083835b60208310151561019d5780518252602082019150602081019050602083039250610178565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6102048161057b565b151561029e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001807f4120707265736372697074696f6e2068617368206d7573742062652070726f7681526020017f696465640000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b6000816040518082805190602001908083835b6020831015156102d657805182526020820191506020810190506020830392506102b1565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060009054906101000a900460ff161515156103b2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260288152602001807f54686520707265736372697074696f6e206861736820697320616c726561647981526020017f20696e207573652e00000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b806001826040518082805190602001908083835b6020831015156103eb57805182526020820191506020810190506020830392506103c6565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600001908051906020019061043492919061058f565b50336001826040518082805190602001908083835b60208310151561046e5780518252602082019150602081019050602083039250610449565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060016000826040518082805190602001908083835b60208310151561051c57805182526020820191506020810190506020830392506104f7565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060006101000a81548160ff02191690831515021790555060026000815480929190600101919050555050565b600060608290506000815111915050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106105d057805160ff19168380011785556105fe565b828001600101855582156105fe579182015b828111156105fd5782518255916020019190600101906105e2565b5b50905061060b919061060f565b5090565b61063191905b8082111561062d576000816000905550600101610615565b5090565b905600a165627a7a72305820712bd9eaf6a0476e3ca35edc387257be6f077d29ed69390af0fdcdff9797e6a40029",
+  "sourceMap": "117:1566:1:-;;;704:25;8:9:-1;5:2;;;30:1;27;20:12;5:2;704:25:1;117:1566;;;;;;",
+  "deployedSourceMap": "117:1566:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1517:164;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1517:164:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;905:602;;8:9:-1;5:2;;;30:1;27;20:12;5:2;905:602:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1517:164;1598:7;1624:14;1639:16;1624:32;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1624:32:1;;;;;;;;;;;;;;;;;;;;;:50;;;;;;;;;;;;1617:57;;1517:164;;;:::o;905:602::-;984:39;1006:16;984:21;:39::i;:::-;976:88;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1122:24;1147:16;1122:42;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1122:42:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1121:43;1113:96;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1272:16;1220:14;1235:16;1220:32;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1220:32:1;;;;;;;;;;;;;;;;;;;;;:49;;:68;;;;;;;;;;;;:::i;:::-;;1351:10;1298:14;1313:16;1298:32;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1298:32:1;;;;;;;;;;;;;;;;;;;;;:50;;;:63;;;;;;;;;;;;;;;;;;1425:4;1380:24;1405:16;1380:42;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1380:42:1;;;;;;;;;;;;;;;;;;;;;;:49;;;;;;;;;;;;;;;;;;1492:6;;:8;;;;;;;;;;;;;905:602;:::o;497:201::-;564:4;580:32;621:5;580:47;;689:1;660:19;:26;:30;652:39;;497:201;;;;:::o;117:1566::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.23;\n\n/// The purpose of this contract is to track a prescription and validate\n/// its integrity\ncontract PrescriptionsRegistry {\n    \n\t// This will incurr in double storage, but we must ensure the hashes are not reused\n\tmapping(string => bool) private _prescriptionHashesInUse;\n\tmapping(string => Prescription) private _prescriptions;\n\t\n    uint256 private _count;\n\t\n    struct Prescription {\n        string PrescriptionHash;\n        address PrescriberAddress;\n    }\n    \n    function stringNotNullNorEmpty(string value) private pure returns (bool) {\n        bytes memory tempEmptyStringTest = bytes(value); // Uses memory\n        return (tempEmptyStringTest.length > 0);\n    }\n\n    constructor() public {\n\t}\n\t\n    /// This method creates a ledger in the chain for all Rx\n    /// The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource\n\tfunction createPrescription(string prescriptionHash) public {\n\n        require(stringNotNullNorEmpty(prescriptionHash), 'A prescription hash must be provided');\n\n        // Require the hash is unique\n        require(!_prescriptionHashesInUse[prescriptionHash], 'The prescription hash is already in use.');\n\n        _prescriptions[prescriptionHash].PrescriptionHash = prescriptionHash;\n        _prescriptions[prescriptionHash].PrescriberAddress = msg.sender;\n        \n        _prescriptionHashesInUse[prescriptionHash] = true;\n        \n        // This takes the problem of the count\n\t    _count++;\n    }\n    \n    function getPrescriptionPrescriber(string prescriptionHash) public view returns (address) {\n        return _prescriptions[prescriptionHash].PrescriberAddress;\n    }\n}",
+  "sourcePath": "/home/thisguy/repos/Pharma-Sign/contracts/PrescriptionsRegistry.sol",
   "ast": {
-    "absolutePath": "/C/Personal/Hackathon/Pharma-Sign/contracts/PrescriptionsRegistry.sol",
+    "absolutePath": "/home/thisguy/repos/Pharma-Sign/contracts/PrescriptionsRegistry.sol",
     "exportedSymbols": {
       "PrescriptionsRegistry": [
         156
@@ -72,7 +72,7 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": "The purpose of this contract is to track a prescription and validate\r\n its integrity\r",
+        "documentation": "The purpose of this contract is to track a prescription and validate\n its integrity",
         "fullyImplemented": true,
         "id": 156,
         "linearizedBaseContracts": [
@@ -87,7 +87,7 @@
             "name": "_prescriptionHashesInUse",
             "nodeType": "VariableDeclaration",
             "scope": 156,
-            "src": "248:56:1",
+            "src": "241:56:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -100,14 +100,14 @@
                 "id": 59,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "256:6:1",
+                "src": "249:6:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "248:23:1",
+              "src": "241:23:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_string_memory_$_t_bool_$",
                 "typeString": "mapping(string => bool)"
@@ -116,7 +116,7 @@
                 "id": 60,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "266:4:1",
+                "src": "259:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -132,7 +132,7 @@
             "name": "_prescriptions",
             "nodeType": "VariableDeclaration",
             "scope": 156,
-            "src": "308:54:1",
+            "src": "300:54:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -145,14 +145,14 @@
                 "id": 63,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "316:6:1",
+                "src": "308:6:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "308:31:1",
+              "src": "300:31:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Prescription_$73_storage_$",
                 "typeString": "mapping(string => struct PrescriptionsRegistry.Prescription)"
@@ -163,7 +163,7 @@
                 "name": "Prescription",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 73,
-                "src": "326:12:1",
+                "src": "318:12:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Prescription_$73_storage_ptr",
                   "typeString": "struct PrescriptionsRegistry.Prescription"
@@ -179,7 +179,7 @@
             "name": "_count",
             "nodeType": "VariableDeclaration",
             "scope": 156,
-            "src": "372:22:1",
+            "src": "362:22:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -190,7 +190,7 @@
               "id": 67,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "372:7:1",
+              "src": "362:7:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -209,7 +209,7 @@
                 "name": "PrescriptionHash",
                 "nodeType": "VariableDeclaration",
                 "scope": 73,
-                "src": "435:23:1",
+                "src": "422:23:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -220,7 +220,7 @@
                   "id": 69,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "435:6:1",
+                  "src": "422:6:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -235,7 +235,7 @@
                 "name": "PrescriberAddress",
                 "nodeType": "VariableDeclaration",
                 "scope": 73,
-                "src": "469:25:1",
+                "src": "455:25:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -246,7 +246,7 @@
                   "id": 71,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "469:7:1",
+                  "src": "455:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -259,14 +259,14 @@
             "name": "Prescription",
             "nodeType": "StructDefinition",
             "scope": 156,
-            "src": "404:98:1",
+            "src": "392:95:1",
             "visibility": "public"
           },
           {
             "body": {
               "id": 92,
               "nodeType": "Block",
-              "src": "587:131:1",
+              "src": "570:128:1",
               "statements": [
                 {
                   "assignments": [
@@ -279,7 +279,7 @@
                       "name": "tempEmptyStringTest",
                       "nodeType": "VariableDeclaration",
                       "scope": 93,
-                      "src": "598:32:1",
+                      "src": "580:32:1",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -290,7 +290,7 @@
                         "id": 80,
                         "name": "bytes",
                         "nodeType": "ElementaryTypeName",
-                        "src": "598:5:1",
+                        "src": "580:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_storage_ptr",
                           "typeString": "bytes"
@@ -311,7 +311,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 75,
-                        "src": "639:5:1",
+                        "src": "621:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -331,7 +331,7 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "633:5:1",
+                      "src": "615:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
                         "typeString": "type(bytes storage pointer)"
@@ -346,14 +346,14 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "633:12:1",
+                    "src": "615:12:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_memory",
                       "typeString": "bytes memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "598:47:1"
+                  "src": "580:47:1"
                 },
                 {
                   "expression": {
@@ -379,7 +379,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 81,
-                            "src": "679:19:1",
+                            "src": "660:19:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -393,7 +393,7 @@
                           "memberName": "length",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "679:26:1",
+                          "src": "660:26:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -411,7 +411,7 @@
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "708:1:1",
+                          "src": "689:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
@@ -419,7 +419,7 @@
                           },
                           "value": "0"
                         },
-                        "src": "679:30:1",
+                        "src": "660:30:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -433,7 +433,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "678:32:1",
+                    "src": "659:32:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -442,7 +442,7 @@
                   "functionReturnParameters": 79,
                   "id": 91,
                   "nodeType": "Return",
-                  "src": "671:39:1"
+                  "src": "652:39:1"
                 }
               ]
             },
@@ -464,7 +464,7 @@
                   "name": "value",
                   "nodeType": "VariableDeclaration",
                   "scope": 93,
-                  "src": "545:12:1",
+                  "src": "528:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -475,7 +475,7 @@
                     "id": 74,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "545:6:1",
+                    "src": "528:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -485,7 +485,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "544:14:1"
+              "src": "527:14:1"
             },
             "payable": false,
             "returnParameters": {
@@ -498,7 +498,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 93,
-                  "src": "581:4:1",
+                  "src": "564:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -509,7 +509,7 @@
                     "id": 77,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "581:4:1",
+                    "src": "564:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -519,10 +519,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "580:6:1"
+              "src": "563:6:1"
             },
             "scope": 156,
-            "src": "514:204:1",
+            "src": "497:201:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "private"
@@ -531,7 +531,7 @@
             "body": {
               "id": 96,
               "nodeType": "Block",
-              "src": "747:5:1",
+              "src": "725:4:1",
               "statements": []
             },
             "documentation": null,
@@ -546,17 +546,17 @@
               "id": 94,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "737:2:1"
+              "src": "715:2:1"
             },
             "payable": false,
             "returnParameters": {
               "id": 95,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "747:0:1"
+              "src": "725:0:1"
             },
             "scope": 156,
-            "src": "726:26:1",
+            "src": "704:25:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -565,7 +565,7 @@
             "body": {
               "id": 141,
               "nodeType": "Block",
-              "src": "992:556:1",
+              "src": "965:542:1",
               "statements": [
                 {
                   "expression": {
@@ -581,7 +581,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 99,
-                            "src": "1035:16:1",
+                            "src": "1006:16:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -600,7 +600,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 93,
-                          "src": "1013:21:1",
+                          "src": "984:21:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bool_$",
                             "typeString": "function (string memory) pure returns (bool)"
@@ -614,7 +614,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1013:39:1",
+                        "src": "984:39:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -630,7 +630,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1054:38:1",
+                        "src": "1025:38:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_d27352b81e5d5fd90c3fd7a94b8110f7d053f76d26c20e9c75e6a1678ea1e00b",
@@ -658,7 +658,7 @@
                         330
                       ],
                       "referencedDeclaration": 330,
-                      "src": "1005:7:1",
+                      "src": "976:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -672,7 +672,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1005:88:1",
+                    "src": "976:88:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -680,7 +680,7 @@
                   },
                   "id": 108,
                   "nodeType": "ExpressionStatement",
-                  "src": "1005:88:1"
+                  "src": "976:88:1"
                 },
                 {
                   "expression": {
@@ -696,7 +696,7 @@
                         "nodeType": "UnaryOperation",
                         "operator": "!",
                         "prefix": true,
-                        "src": "1153:43:1",
+                        "src": "1121:43:1",
                         "subExpression": {
                           "argumentTypes": null,
                           "baseExpression": {
@@ -706,7 +706,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 62,
-                            "src": "1154:24:1",
+                            "src": "1122:24:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_string_memory_$_t_bool_$",
                               "typeString": "mapping(string memory => bool)"
@@ -720,7 +720,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 99,
-                            "src": "1179:16:1",
+                            "src": "1147:16:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -731,7 +731,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1154:42:1",
+                          "src": "1122:42:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -752,7 +752,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1198:42:1",
+                        "src": "1166:42:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_cf6b6141285d0e8f0bf428c1cf8dd1fa15577e49b95711fdd05f28345a3cbf01",
@@ -780,7 +780,7 @@
                         330
                       ],
                       "referencedDeclaration": 330,
-                      "src": "1145:7:1",
+                      "src": "1113:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -794,7 +794,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1145:96:1",
+                    "src": "1113:96:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -802,7 +802,7 @@
                   },
                   "id": 116,
                   "nodeType": "ExpressionStatement",
-                  "src": "1145:96:1"
+                  "src": "1113:96:1"
                 },
                 {
                   "expression": {
@@ -823,7 +823,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 66,
-                          "src": "1254:14:1",
+                          "src": "1220:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Prescription_$73_storage_$",
                             "typeString": "mapping(string memory => struct PrescriptionsRegistry.Prescription storage ref)"
@@ -837,7 +837,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 99,
-                          "src": "1269:16:1",
+                          "src": "1235:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
                             "typeString": "string memory"
@@ -848,7 +848,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "1254:32:1",
+                        "src": "1220:32:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Prescription_$73_storage",
                           "typeString": "struct PrescriptionsRegistry.Prescription storage ref"
@@ -862,7 +862,7 @@
                       "memberName": "PrescriptionHash",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 70,
-                      "src": "1254:49:1",
+                      "src": "1220:49:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -877,13 +877,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 99,
-                      "src": "1306:16:1",
+                      "src": "1272:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "1254:68:1",
+                    "src": "1220:68:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
@@ -891,7 +891,7 @@
                   },
                   "id": 123,
                   "nodeType": "ExpressionStatement",
-                  "src": "1254:68:1"
+                  "src": "1220:68:1"
                 },
                 {
                   "expression": {
@@ -912,7 +912,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 66,
-                          "src": "1333:14:1",
+                          "src": "1298:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Prescription_$73_storage_$",
                             "typeString": "mapping(string memory => struct PrescriptionsRegistry.Prescription storage ref)"
@@ -926,7 +926,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 99,
-                          "src": "1348:16:1",
+                          "src": "1313:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
                             "typeString": "string memory"
@@ -937,7 +937,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "1333:32:1",
+                        "src": "1298:32:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Prescription_$73_storage",
                           "typeString": "struct PrescriptionsRegistry.Prescription storage ref"
@@ -951,7 +951,7 @@
                       "memberName": "PrescriberAddress",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 72,
-                      "src": "1333:50:1",
+                      "src": "1298:50:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -968,7 +968,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 326,
-                        "src": "1386:3:1",
+                        "src": "1351:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
@@ -982,13 +982,13 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1386:10:1",
+                      "src": "1351:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "1333:63:1",
+                    "src": "1298:63:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -996,7 +996,7 @@
                   },
                   "id": 131,
                   "nodeType": "ExpressionStatement",
-                  "src": "1333:63:1"
+                  "src": "1298:63:1"
                 },
                 {
                   "expression": {
@@ -1015,7 +1015,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 62,
-                        "src": "1417:24:1",
+                        "src": "1380:24:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_string_memory_$_t_bool_$",
                           "typeString": "mapping(string memory => bool)"
@@ -1029,7 +1029,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 99,
-                        "src": "1442:16:1",
+                        "src": "1405:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1040,7 +1040,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1417:42:1",
+                      "src": "1380:42:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -1058,7 +1058,7 @@
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1462:4:1",
+                      "src": "1425:4:1",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1066,7 +1066,7 @@
                       },
                       "value": "true"
                     },
-                    "src": "1417:49:1",
+                    "src": "1380:49:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1074,7 +1074,7 @@
                   },
                   "id": 137,
                   "nodeType": "ExpressionStatement",
-                  "src": "1417:49:1"
+                  "src": "1380:49:1"
                 },
                 {
                   "expression": {
@@ -1087,7 +1087,7 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "1532:8:1",
+                    "src": "1492:8:1",
                     "subExpression": {
                       "argumentTypes": null,
                       "id": 138,
@@ -1095,7 +1095,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 68,
-                      "src": "1532:6:1",
+                      "src": "1492:6:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1108,11 +1108,11 @@
                   },
                   "id": 140,
                   "nodeType": "ExpressionStatement",
-                  "src": "1532:8:1"
+                  "src": "1492:8:1"
                 }
               ]
             },
-            "documentation": "This method creates a ledger in the chain for all Rx\r\n The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource\r",
+            "documentation": "This method creates a ledger in the chain for all Rx\n The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource",
             "id": 142,
             "implemented": true,
             "isConstructor": false,
@@ -1130,7 +1130,7 @@
                   "name": "prescriptionHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 142,
-                  "src": "960:23:1",
+                  "src": "933:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1141,7 +1141,7 @@
                     "id": 98,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "960:6:1",
+                    "src": "933:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1151,17 +1151,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "959:25:1"
+              "src": "932:25:1"
             },
             "payable": false,
             "returnParameters": {
               "id": 101,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "992:0:1"
+              "src": "965:0:1"
             },
             "scope": 156,
-            "src": "932:616:1",
+            "src": "905:602:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -1170,7 +1170,7 @@
             "body": {
               "id": 154,
               "nodeType": "Block",
-              "src": "1650:76:1",
+              "src": "1607:74:1",
               "statements": [
                 {
                   "expression": {
@@ -1184,7 +1184,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 66,
-                        "src": "1668:14:1",
+                        "src": "1624:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Prescription_$73_storage_$",
                           "typeString": "mapping(string memory => struct PrescriptionsRegistry.Prescription storage ref)"
@@ -1198,7 +1198,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 144,
-                        "src": "1683:16:1",
+                        "src": "1639:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1209,7 +1209,7 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "1668:32:1",
+                      "src": "1624:32:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Prescription_$73_storage",
                         "typeString": "struct PrescriptionsRegistry.Prescription storage ref"
@@ -1223,7 +1223,7 @@
                     "memberName": "PrescriberAddress",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": 72,
-                    "src": "1668:50:1",
+                    "src": "1624:50:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1232,7 +1232,7 @@
                   "functionReturnParameters": 148,
                   "id": 153,
                   "nodeType": "Return",
-                  "src": "1661:57:1"
+                  "src": "1617:57:1"
                 }
               ]
             },
@@ -1254,7 +1254,7 @@
                   "name": "prescriptionHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 155,
-                  "src": "1595:23:1",
+                  "src": "1552:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1265,7 +1265,7 @@
                     "id": 143,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1595:6:1",
+                    "src": "1552:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1275,7 +1275,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1594:25:1"
+              "src": "1551:25:1"
             },
             "payable": false,
             "returnParameters": {
@@ -1288,7 +1288,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 155,
-                  "src": "1641:7:1",
+                  "src": "1598:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1299,7 +1299,7 @@
                     "id": 146,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1641:7:1",
+                    "src": "1598:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1309,23 +1309,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1640:9:1"
+              "src": "1597:9:1"
             },
             "scope": 156,
-            "src": "1560:166:1",
+            "src": "1517:164:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 157,
-        "src": "121:1608:1"
+        "src": "117:1566:1"
       }
     ],
-    "src": "0:1729:1"
+    "src": "0:1683:1"
   },
   "legacyAST": {
-    "absolutePath": "/C/Personal/Hackathon/Pharma-Sign/contracts/PrescriptionsRegistry.sol",
+    "absolutePath": "/home/thisguy/repos/Pharma-Sign/contracts/PrescriptionsRegistry.sol",
     "exportedSymbols": {
       "PrescriptionsRegistry": [
         156
@@ -1349,7 +1349,7 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": "The purpose of this contract is to track a prescription and validate\r\n its integrity\r",
+        "documentation": "The purpose of this contract is to track a prescription and validate\n its integrity",
         "fullyImplemented": true,
         "id": 156,
         "linearizedBaseContracts": [
@@ -1364,7 +1364,7 @@
             "name": "_prescriptionHashesInUse",
             "nodeType": "VariableDeclaration",
             "scope": 156,
-            "src": "248:56:1",
+            "src": "241:56:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1377,14 +1377,14 @@
                 "id": 59,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "256:6:1",
+                "src": "249:6:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "248:23:1",
+              "src": "241:23:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_string_memory_$_t_bool_$",
                 "typeString": "mapping(string => bool)"
@@ -1393,7 +1393,7 @@
                 "id": 60,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "266:4:1",
+                "src": "259:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -1409,7 +1409,7 @@
             "name": "_prescriptions",
             "nodeType": "VariableDeclaration",
             "scope": 156,
-            "src": "308:54:1",
+            "src": "300:54:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1422,14 +1422,14 @@
                 "id": 63,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "316:6:1",
+                "src": "308:6:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "308:31:1",
+              "src": "300:31:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Prescription_$73_storage_$",
                 "typeString": "mapping(string => struct PrescriptionsRegistry.Prescription)"
@@ -1440,7 +1440,7 @@
                 "name": "Prescription",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 73,
-                "src": "326:12:1",
+                "src": "318:12:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Prescription_$73_storage_ptr",
                   "typeString": "struct PrescriptionsRegistry.Prescription"
@@ -1456,7 +1456,7 @@
             "name": "_count",
             "nodeType": "VariableDeclaration",
             "scope": 156,
-            "src": "372:22:1",
+            "src": "362:22:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1467,7 +1467,7 @@
               "id": 67,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "372:7:1",
+              "src": "362:7:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1486,7 +1486,7 @@
                 "name": "PrescriptionHash",
                 "nodeType": "VariableDeclaration",
                 "scope": 73,
-                "src": "435:23:1",
+                "src": "422:23:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1497,7 +1497,7 @@
                   "id": 69,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "435:6:1",
+                  "src": "422:6:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -1512,7 +1512,7 @@
                 "name": "PrescriberAddress",
                 "nodeType": "VariableDeclaration",
                 "scope": 73,
-                "src": "469:25:1",
+                "src": "455:25:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1523,7 +1523,7 @@
                   "id": 71,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "469:7:1",
+                  "src": "455:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -1536,14 +1536,14 @@
             "name": "Prescription",
             "nodeType": "StructDefinition",
             "scope": 156,
-            "src": "404:98:1",
+            "src": "392:95:1",
             "visibility": "public"
           },
           {
             "body": {
               "id": 92,
               "nodeType": "Block",
-              "src": "587:131:1",
+              "src": "570:128:1",
               "statements": [
                 {
                   "assignments": [
@@ -1556,7 +1556,7 @@
                       "name": "tempEmptyStringTest",
                       "nodeType": "VariableDeclaration",
                       "scope": 93,
-                      "src": "598:32:1",
+                      "src": "580:32:1",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -1567,7 +1567,7 @@
                         "id": 80,
                         "name": "bytes",
                         "nodeType": "ElementaryTypeName",
-                        "src": "598:5:1",
+                        "src": "580:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_storage_ptr",
                           "typeString": "bytes"
@@ -1588,7 +1588,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 75,
-                        "src": "639:5:1",
+                        "src": "621:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1608,7 +1608,7 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "633:5:1",
+                      "src": "615:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
                         "typeString": "type(bytes storage pointer)"
@@ -1623,14 +1623,14 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "633:12:1",
+                    "src": "615:12:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_memory",
                       "typeString": "bytes memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "598:47:1"
+                  "src": "580:47:1"
                 },
                 {
                   "expression": {
@@ -1656,7 +1656,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 81,
-                            "src": "679:19:1",
+                            "src": "660:19:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -1670,7 +1670,7 @@
                           "memberName": "length",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "679:26:1",
+                          "src": "660:26:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1688,7 +1688,7 @@
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "708:1:1",
+                          "src": "689:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
@@ -1696,7 +1696,7 @@
                           },
                           "value": "0"
                         },
-                        "src": "679:30:1",
+                        "src": "660:30:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1710,7 +1710,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "678:32:1",
+                    "src": "659:32:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1719,7 +1719,7 @@
                   "functionReturnParameters": 79,
                   "id": 91,
                   "nodeType": "Return",
-                  "src": "671:39:1"
+                  "src": "652:39:1"
                 }
               ]
             },
@@ -1741,7 +1741,7 @@
                   "name": "value",
                   "nodeType": "VariableDeclaration",
                   "scope": 93,
-                  "src": "545:12:1",
+                  "src": "528:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1752,7 +1752,7 @@
                     "id": 74,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "545:6:1",
+                    "src": "528:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1762,7 +1762,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "544:14:1"
+              "src": "527:14:1"
             },
             "payable": false,
             "returnParameters": {
@@ -1775,7 +1775,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 93,
-                  "src": "581:4:1",
+                  "src": "564:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1786,7 +1786,7 @@
                     "id": 77,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "581:4:1",
+                    "src": "564:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1796,10 +1796,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "580:6:1"
+              "src": "563:6:1"
             },
             "scope": 156,
-            "src": "514:204:1",
+            "src": "497:201:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "private"
@@ -1808,7 +1808,7 @@
             "body": {
               "id": 96,
               "nodeType": "Block",
-              "src": "747:5:1",
+              "src": "725:4:1",
               "statements": []
             },
             "documentation": null,
@@ -1823,17 +1823,17 @@
               "id": 94,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "737:2:1"
+              "src": "715:2:1"
             },
             "payable": false,
             "returnParameters": {
               "id": 95,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "747:0:1"
+              "src": "725:0:1"
             },
             "scope": 156,
-            "src": "726:26:1",
+            "src": "704:25:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -1842,7 +1842,7 @@
             "body": {
               "id": 141,
               "nodeType": "Block",
-              "src": "992:556:1",
+              "src": "965:542:1",
               "statements": [
                 {
                   "expression": {
@@ -1858,7 +1858,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 99,
-                            "src": "1035:16:1",
+                            "src": "1006:16:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -1877,7 +1877,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 93,
-                          "src": "1013:21:1",
+                          "src": "984:21:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bool_$",
                             "typeString": "function (string memory) pure returns (bool)"
@@ -1891,7 +1891,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1013:39:1",
+                        "src": "984:39:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1907,7 +1907,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1054:38:1",
+                        "src": "1025:38:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_d27352b81e5d5fd90c3fd7a94b8110f7d053f76d26c20e9c75e6a1678ea1e00b",
@@ -1935,7 +1935,7 @@
                         330
                       ],
                       "referencedDeclaration": 330,
-                      "src": "1005:7:1",
+                      "src": "976:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -1949,7 +1949,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1005:88:1",
+                    "src": "976:88:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1957,7 +1957,7 @@
                   },
                   "id": 108,
                   "nodeType": "ExpressionStatement",
-                  "src": "1005:88:1"
+                  "src": "976:88:1"
                 },
                 {
                   "expression": {
@@ -1973,7 +1973,7 @@
                         "nodeType": "UnaryOperation",
                         "operator": "!",
                         "prefix": true,
-                        "src": "1153:43:1",
+                        "src": "1121:43:1",
                         "subExpression": {
                           "argumentTypes": null,
                           "baseExpression": {
@@ -1983,7 +1983,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 62,
-                            "src": "1154:24:1",
+                            "src": "1122:24:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_string_memory_$_t_bool_$",
                               "typeString": "mapping(string memory => bool)"
@@ -1997,7 +1997,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 99,
-                            "src": "1179:16:1",
+                            "src": "1147:16:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -2008,7 +2008,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1154:42:1",
+                          "src": "1122:42:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -2029,7 +2029,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1198:42:1",
+                        "src": "1166:42:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_cf6b6141285d0e8f0bf428c1cf8dd1fa15577e49b95711fdd05f28345a3cbf01",
@@ -2057,7 +2057,7 @@
                         330
                       ],
                       "referencedDeclaration": 330,
-                      "src": "1145:7:1",
+                      "src": "1113:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -2071,7 +2071,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1145:96:1",
+                    "src": "1113:96:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -2079,7 +2079,7 @@
                   },
                   "id": 116,
                   "nodeType": "ExpressionStatement",
-                  "src": "1145:96:1"
+                  "src": "1113:96:1"
                 },
                 {
                   "expression": {
@@ -2100,7 +2100,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 66,
-                          "src": "1254:14:1",
+                          "src": "1220:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Prescription_$73_storage_$",
                             "typeString": "mapping(string memory => struct PrescriptionsRegistry.Prescription storage ref)"
@@ -2114,7 +2114,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 99,
-                          "src": "1269:16:1",
+                          "src": "1235:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
                             "typeString": "string memory"
@@ -2125,7 +2125,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "1254:32:1",
+                        "src": "1220:32:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Prescription_$73_storage",
                           "typeString": "struct PrescriptionsRegistry.Prescription storage ref"
@@ -2139,7 +2139,7 @@
                       "memberName": "PrescriptionHash",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 70,
-                      "src": "1254:49:1",
+                      "src": "1220:49:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -2154,13 +2154,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 99,
-                      "src": "1306:16:1",
+                      "src": "1272:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "1254:68:1",
+                    "src": "1220:68:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
@@ -2168,7 +2168,7 @@
                   },
                   "id": 123,
                   "nodeType": "ExpressionStatement",
-                  "src": "1254:68:1"
+                  "src": "1220:68:1"
                 },
                 {
                   "expression": {
@@ -2189,7 +2189,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 66,
-                          "src": "1333:14:1",
+                          "src": "1298:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Prescription_$73_storage_$",
                             "typeString": "mapping(string memory => struct PrescriptionsRegistry.Prescription storage ref)"
@@ -2203,7 +2203,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 99,
-                          "src": "1348:16:1",
+                          "src": "1313:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
                             "typeString": "string memory"
@@ -2214,7 +2214,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "1333:32:1",
+                        "src": "1298:32:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Prescription_$73_storage",
                           "typeString": "struct PrescriptionsRegistry.Prescription storage ref"
@@ -2228,7 +2228,7 @@
                       "memberName": "PrescriberAddress",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 72,
-                      "src": "1333:50:1",
+                      "src": "1298:50:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -2245,7 +2245,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 326,
-                        "src": "1386:3:1",
+                        "src": "1351:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
@@ -2259,13 +2259,13 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1386:10:1",
+                      "src": "1351:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "1333:63:1",
+                    "src": "1298:63:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2273,7 +2273,7 @@
                   },
                   "id": 131,
                   "nodeType": "ExpressionStatement",
-                  "src": "1333:63:1"
+                  "src": "1298:63:1"
                 },
                 {
                   "expression": {
@@ -2292,7 +2292,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 62,
-                        "src": "1417:24:1",
+                        "src": "1380:24:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_string_memory_$_t_bool_$",
                           "typeString": "mapping(string memory => bool)"
@@ -2306,7 +2306,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 99,
-                        "src": "1442:16:1",
+                        "src": "1405:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2317,7 +2317,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1417:42:1",
+                      "src": "1380:42:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -2335,7 +2335,7 @@
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1462:4:1",
+                      "src": "1425:4:1",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -2343,7 +2343,7 @@
                       },
                       "value": "true"
                     },
-                    "src": "1417:49:1",
+                    "src": "1380:49:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2351,7 +2351,7 @@
                   },
                   "id": 137,
                   "nodeType": "ExpressionStatement",
-                  "src": "1417:49:1"
+                  "src": "1380:49:1"
                 },
                 {
                   "expression": {
@@ -2364,7 +2364,7 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "1532:8:1",
+                    "src": "1492:8:1",
                     "subExpression": {
                       "argumentTypes": null,
                       "id": 138,
@@ -2372,7 +2372,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 68,
-                      "src": "1532:6:1",
+                      "src": "1492:6:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2385,11 +2385,11 @@
                   },
                   "id": 140,
                   "nodeType": "ExpressionStatement",
-                  "src": "1532:8:1"
+                  "src": "1492:8:1"
                 }
               ]
             },
-            "documentation": "This method creates a ledger in the chain for all Rx\r\n The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource\r",
+            "documentation": "This method creates a ledger in the chain for all Rx\n The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource",
             "id": 142,
             "implemented": true,
             "isConstructor": false,
@@ -2407,7 +2407,7 @@
                   "name": "prescriptionHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 142,
-                  "src": "960:23:1",
+                  "src": "933:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2418,7 +2418,7 @@
                     "id": 98,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "960:6:1",
+                    "src": "933:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2428,17 +2428,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "959:25:1"
+              "src": "932:25:1"
             },
             "payable": false,
             "returnParameters": {
               "id": 101,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "992:0:1"
+              "src": "965:0:1"
             },
             "scope": 156,
-            "src": "932:616:1",
+            "src": "905:602:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -2447,7 +2447,7 @@
             "body": {
               "id": 154,
               "nodeType": "Block",
-              "src": "1650:76:1",
+              "src": "1607:74:1",
               "statements": [
                 {
                   "expression": {
@@ -2461,7 +2461,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 66,
-                        "src": "1668:14:1",
+                        "src": "1624:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Prescription_$73_storage_$",
                           "typeString": "mapping(string memory => struct PrescriptionsRegistry.Prescription storage ref)"
@@ -2475,7 +2475,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 144,
-                        "src": "1683:16:1",
+                        "src": "1639:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2486,7 +2486,7 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "1668:32:1",
+                      "src": "1624:32:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Prescription_$73_storage",
                         "typeString": "struct PrescriptionsRegistry.Prescription storage ref"
@@ -2500,7 +2500,7 @@
                     "memberName": "PrescriberAddress",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": 72,
-                    "src": "1668:50:1",
+                    "src": "1624:50:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2509,7 +2509,7 @@
                   "functionReturnParameters": 148,
                   "id": 153,
                   "nodeType": "Return",
-                  "src": "1661:57:1"
+                  "src": "1617:57:1"
                 }
               ]
             },
@@ -2531,7 +2531,7 @@
                   "name": "prescriptionHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 155,
-                  "src": "1595:23:1",
+                  "src": "1552:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2542,7 +2542,7 @@
                     "id": 143,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1595:6:1",
+                    "src": "1552:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2552,7 +2552,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1594:25:1"
+              "src": "1551:25:1"
             },
             "payable": false,
             "returnParameters": {
@@ -2565,7 +2565,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 155,
-                  "src": "1641:7:1",
+                  "src": "1598:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2576,7 +2576,7 @@
                     "id": 146,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1641:7:1",
+                    "src": "1598:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2586,33 +2586,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1640:9:1"
+              "src": "1597:9:1"
             },
             "scope": 156,
-            "src": "1560:166:1",
+            "src": "1517:164:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 157,
-        "src": "121:1608:1"
+        "src": "117:1566:1"
       }
     ],
-    "src": "0:1729:1"
+    "src": "0:1683:1"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {
-    "5777": {
+    "1539468482461": {
       "events": {},
       "links": {},
-      "address": "0x28248f1c79e165331142568b1a33235e1d6b636d",
-      "transactionHash": "0xa2103ca848d507f28c83c365b3166b7f2e7609d06472074c3ee029cc4ef9d40a"
+      "address": "0x0bfa1c4baa40d1b81def0c07f402692a62f66aef",
+      "transactionHash": "0xf4d6c737d20f45a886ac9d59769929eb9b201e8c5782290d75e15fb1c32bc92a"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-13T22:02:25.868Z"
+  "updatedAt": "2018-10-13T22:08:05.482Z"
 }
