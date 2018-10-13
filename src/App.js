@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
+<<<<<<< HEAD
 const EthCrypto = require("eth-crypto");
+=======
+import Linnia from "@linniaprotocol/linnia-js";
+
+import ipfsWrapper from './ipfs';
+
+
+>>>>>>> 973195da07a457c1a9161041cb6c1a19194c1e58
 //Styles
 import "./App.css";
 import {
@@ -74,7 +82,12 @@ class App extends Component {
 
   uploadPrescriptionToIPFS = (e, { encryptedPrescription }) => {
     // ipfs.add(JSON.stringify(encryptedPrescription));
-    const IPFSHash = "testIPFSHash";
+    var IPFSHash = "testIPFSHash";
+
+    ipfsWrapper.add(encryptedPrescription, (err, ipfsHash) => {
+        IPFSHash = ipfsHash;
+      });
+
     return IPFSHash;
   };
 
