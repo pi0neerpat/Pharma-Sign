@@ -1,5 +1,5 @@
-var SimpleStorage = artifacts.require("./SimpleStorage.sol");
+var prescriptionsRegistry = artifacts.require("./PrescriptionsRegistry.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(SimpleStorage);
+  deployer.deploy(prescriptionsRegistry);
 };
