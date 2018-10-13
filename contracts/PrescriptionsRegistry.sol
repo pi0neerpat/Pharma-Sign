@@ -12,7 +12,7 @@ contract PrescriptionsRegistry {
 	
     struct Prescription {
         string PrescriptionHash;
-        string PrescriberSignature;
+        address PrescriberAddress;
     }
     
     
@@ -21,13 +21,13 @@ contract PrescriptionsRegistry {
 	
     /// This method creates a ledger in the chain for all Rx
     /// The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource
-	function createPrescription(string prescriptionHash, string prescriberSignature) public {
+	function createPrescription(string prescriptionHash) public {
 
         // Require the hash is unique
         require(!_prescriptionHashesInUse[prescriptionHash], 'The prescription hash is already in use.');
 
         _prescriptions[prescriptionHash].PrescriptionHash = prescriptionHash;
-        _prescriptions[prescriptionHash].PrescriberSignature = prescriberSignature;
+        _prescriptions[prescriptionHash].PrescriberAddress = msg.sender;
         
         _prescriptionHashesInUse[prescriptionHash] = true;
         
@@ -35,7 +35,7 @@ contract PrescriptionsRegistry {
 	    _count++;
     }
     
-    function getPrescriptionPrescriber(string prescriptionHash) public view returns (string) {
-        return _prescriptions[prescriptionHash].PrescriberSignature;
+    function getPrescriptionPrescriber(string prescriptionHash) public view returns (address) {
+        return _prescriptions[prescriptionHash].PrescriberAddress;
     }
 }

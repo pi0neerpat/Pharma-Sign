@@ -64,3 +64,5 @@ typings/
 # next.js build output
 .next
 /.vs/slnx.sqlite
+/.vs/Pharma-Sign/v15
+/.vs
