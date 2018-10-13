@@ -66,3 +66,4 @@ typings/
 /.vs/slnx.sqlite
 /.vs/Pharma-Sign/v15
 /.vs
+/build/contracts
