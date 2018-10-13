@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 
-<<<<<<< HEAD
-const EthCrypto = require("eth-crypto");
-=======
-import Linnia from "@linniaprotocol/linnia-js";
-
-import ipfsWrapper from './ipfs';
-
-
->>>>>>> 973195da07a457c1a9161041cb6c1a19194c1e58
+import EthCrypto from "eth-crypto";
 //Styles
 import "./App.css";
 import {
@@ -26,6 +18,8 @@ import {
   Icon,
   Label
 } from "semantic-ui-react";
+
+import ipfsWrapper from "./ipfs";
 
 // Components
 import web3 from "./ethereum/web3";
@@ -85,8 +79,8 @@ class App extends Component {
     var IPFSHash = "testIPFSHash";
 
     ipfsWrapper.add(encryptedPrescription, (err, ipfsHash) => {
-        IPFSHash = ipfsHash;
-      });
+      IPFSHash = ipfsHash;
+    });
 
     return IPFSHash;
   };
@@ -182,7 +176,7 @@ class App extends Component {
                   value={this.state.network}
                 /> */}
               </Form.Input>
-              <Button color="green" content="Get Shareable Link" />
+              <Button color="green" content="Submit" />
               <p>makeadapp.com{this.state.mnemonic || "/ ..."}</p>
             </Grid.Column>
           </Grid>
@@ -192,64 +186,7 @@ class App extends Component {
     );
   }
   renderPharmacy() {
-    return (
-      <Segment textAlign="left">
-        <Form
-          error={!!this.state.errorMessage}
-          onSubmit={this.handleGenerateURL}
-        >
-          <Grid columns={2}>
-            <Grid.Column>
-              <Form.Input
-                inline
-                name="contractName"
-                label="DApp name"
-                placeholder="(optional)"
-                value={this.state.contractName}
-                onChange={this.handleChange}
-              />
-              <Form.TextArea
-                label="ABI (application binary interface)"
-                placeholder="ABI"
-                name="abiRaw"
-                value={this.state.abiRaw}
-                onChange={this.handleChangeABI}
-              />
-            </Grid.Column>
-            <Grid.Column>
-              <Form.Input
-                inline
-                name="contractAddress"
-                label="Contract address"
-                placeholder="0xab123..."
-                value={this.state.contractAddress}
-                onChange={this.handleChange}
-              />
-              <Form.Input inline label="Network">
-                <Form.Dropdown
-                  placeholder="Main, Ropsten, Rinkeby ..."
-                  selection
-                  inline
-                  name="network"
-                  onChange={this.handleChange}
-                  options={[
-                    { key: "Main", value: "main", text: "Main" },
-                    { key: "Ropsten", value: "ropsten", text: "Ropsten" },
-                    { key: "Rinkeby", value: "rinkeby", text: "Rinkeby" },
-                    { key: "Kovan", value: "kovan", text: "Kovan" },
-                    { key: "local-host", value: "local", text: "local-host" }
-                  ]}
-                  value={this.state.network}
-                />
-              </Form.Input>
-              <Button color="green" content="Get Shareable Link" />
-              <p>makeadapp.com{this.state.mnemonic || "/ ..."}</p>
-            </Grid.Column>
-          </Grid>
-          <Message error header="Oops!" content={this.state.errorMessage} />
-        </Form>
-      </Segment>
-    );
+    return <Segment textAlign="left" />;
   }
 
   render() {
