@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Linnia from "@linniaprotocol/linnia-js";
+
 //Styles
 import "./App.css";
 import {
@@ -25,32 +27,73 @@ class App extends Component {
   state = {
     IPFSHash: "",
     prescription: "",
-    hasError: false
+    hasError: false,
+    pharmacyAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789",
+    pharmacyPrivateKey:
+      "0x59d0952923cc7f3f335af5e5156e2b7965d98545048b854902874e7da247f146"
   };
 
   componentDidMount = () => {
-    this.loadExistingContract();
+    this.loadRegistryContracts();
   };
 
-  loadRegistry = () => {};
+  loadRegistryContracts = () => {
+    // contract addresses hardcoded here
+  };
 
   handleChange = (e, { name, value }) => {
     this.setState({ [name]: value });
   };
 
-  handleUploadIPFS = () => {
+  handleSubmitPrescription = () => {
     const { prescription } = this.state;
-
-    console.log("Uploading to IPFS...");
-    //Upload to IPFS
-
-    this.setState({ IPFSHash: "string" });
+    this.encryptPrescription(prescription).then(encryptedPrescription => {
+      this.uploadPrescriptionToIPFS(encryptedPrescription).then(IPFSHash =>
+        this.submitHashToChain(IPFSHash).then(txReceipt =>
+          this.setState({ txReceipt, IPFSHash })
+        )
+      );
+    });
   };
 
-  // send() methods alter the contract state, and require gas.
-  handleSubmitIPFSHash = (e, { name }) => {};
+  encryptPrescription = (e, { prescription }) => {
+    const { pharmacyPrivateKey } = this.state;
+    /**
+     * EIP 1098 (https://github.com/ethereum/EIPs/pull/1098)
+     * Encrypt
+     * @param {String} pubKeyTo
+     * @param {JSON} data Data to be encrypted (Has to be JSON Object)
+     * @returns {JSON} Encrypted message
+     */
+    const encryptedPrescription = Linnia.util.encrypt(
+      pharmacyPrivateKey,
+      prescription
+    );
+    return encryptedPrescription;
+  };
 
-  handleGeneratePrescription = (e, { name }) => {};
+  uploadPrescriptionToIPFS = (e, { encryptedPrescription }) => {
+    // ipfs.add(JSON.stringify(encryptedPrescription));
+    const IPFSHash = "testIPFSHash";
+    return IPFSHash;
+  };
+
+  submitHashToChain = (e, { IPFSHash }) => {
+    const txReceipt = "testTXReceipt";
+    return txReceipt;
+  };
+
+  decryptPrescription = (e, { encryptPrescription }) => {
+    /**
+     * EIP 1098 (https://github.com/ethereum/EIPs/pull/1098)
+     * Decrypt
+     * @param {String} privKey
+     * @param {String} encrypted Encrypted message
+     * @returns {String} plaintext
+     */
+    Linnia.util.decrypt();
+    // do something
+  };
 
   renderInterface() {
     return (
@@ -79,37 +122,38 @@ class App extends Component {
       <Segment textAlign="left">
         <Form
           error={!!this.state.errorMessage}
-          onSubmit={this.handleGenerateURL}
+          onSubmit={this.handleSubmitPrescription}
         >
           <Grid columns={2}>
             <Grid.Column>
               <Form.Input
                 inline
-                name="contractName"
-                label="DApp name"
-                placeholder="(optional)"
-                value={this.state.contractName}
+                name="doctorName"
+                label="Doctor Name"
+                placeholder="first-name last-name"
+                value={this.state.patientDOB}
                 onChange={this.handleChange}
               />
-              <Form.TextArea
-                label="ABI (application binary interface)"
-                placeholder="ABI"
-                name="abiRaw"
-                value={this.state.abiRaw}
-                onChange={this.handleChangeABI}
+              <Form.Input
+                inline
+                name="patientName"
+                label="Patient Name"
+                placeholder="first-name last-name"
+                value={this.state.patientName}
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                inline
+                name="patientDOB"
+                label="Patient Date of Birth"
+                placeholder="mm/dd/yyyy"
+                value={this.state.patientDOB}
+                onChange={this.handleChange}
               />
             </Grid.Column>
             <Grid.Column>
-              <Form.Input
-                inline
-                name="contractAddress"
-                label="Contract address"
-                placeholder="0xab123..."
-                value={this.state.contractAddress}
-                onChange={this.handleChange}
-              />
-              <Form.Input inline label="Network">
-                <Form.Dropdown
+              <Form.Input inline label="Drug Name">
+                {/* <Form.Dropdown
                   placeholder="Main, Ropsten, Rinkeby ..."
                   selection
                   inline
@@ -123,7 +167,7 @@ class App extends Component {
                     { key: "local-host", value: "local", text: "local-host" }
                   ]}
                   value={this.state.network}
-                />
+                /> */}
               </Form.Input>
               <Button color="green" content="Get Shareable Link" />
               <p>makeadapp.com{this.state.mnemonic || "/ ..."}</p>
