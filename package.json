@@ -49,6 +49,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "@linniaprotocol/linnia-js": "^0.3.0",
     "concurrently": "^4.0.1",
     "ganache-cli": "^6.1.8",
     "react": "^15.4.2",
@@ -59,6 +60,7 @@
     "redux": "^3.6.0",
     "redux-auth-wrapper": "^1.0.0",
     "redux-thunk": "^2.2.0",
+    "semantic-ui-react": "^0.82.5",
     "uport-connect": "^0.7.3"
   },
   "scripts": {
