@@ -15,13 +15,19 @@ contract PrescriptionsRegistry {
         address PrescriberAddress;
     }
     
-    
+    function stringNotNullNorEmpty(string value) private pure returns (bool) {
+        bytes memory tempEmptyStringTest = bytes(value); // Uses memory
+        return (tempEmptyStringTest.length > 0);
+    }
+
     constructor() public {
 	}
 	
     /// This method creates a ledger in the chain for all Rx
     /// The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource
 	function createPrescription(string prescriptionHash) public {
+
+        require(stringNotNullNorEmpty(prescriptionHash), 'A prescription hash must be provided');
 
         // Require the hash is unique
         require(!_prescriptionHashesInUse[prescriptionHash], 'The prescription hash is already in use.');
