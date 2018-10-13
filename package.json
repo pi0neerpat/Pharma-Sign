@@ -51,6 +51,7 @@
   "dependencies": {
     "@linniaprotocol/linnia-js": "^0.3.0",
     "concurrently": "^4.0.1",
+    "eth-crypto": "^1.2.4",
     "ganache-cli": "^6.1.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -64,8 +65,8 @@
     "uport-connect": "^0.7.3"
   },
   "scripts": {
-    "start": "concurrently \"node scripts/start.js\" \"npm run start-ganache\" \"npm run deploy-contracts\"",
-    "start-ganache": "ganache-cli -m \"fortune cherry broom april game spice produce flight piece sunny gather silly\"",
+    "start": "concurrently \"npm run start-ganache\" \"npm run deploy-contracts\" \"node scripts/start.js\" ",
+    "start-ganache": "ganache-cli -m \"fortune cherry broom april game spice produce flight piece sunny gather silly\"  --acctKeys ganache-accounts.json ",
     "deploy-contracts": "truffle migrate",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"

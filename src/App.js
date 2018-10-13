@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-import Linnia from "@linniaprotocol/linnia-js";
-
+const EthCrypto = require("eth-crypto");
 //Styles
 import "./App.css";
 import {
@@ -65,10 +64,11 @@ class App extends Component {
      * @param {JSON} data Data to be encrypted (Has to be JSON Object)
      * @returns {JSON} Encrypted message
      */
-    const encryptedPrescription = Linnia.util.encrypt(
-      pharmacyPrivateKey,
-      prescription
-    );
+    const encryptedPrescription = "";
+    //  Linnia.util.encrypt(
+    //   pharmacyPrivateKey,
+    //   prescription
+    // );
     return encryptedPrescription;
   };
 
@@ -91,7 +91,7 @@ class App extends Component {
      * @param {String} encrypted Encrypted message
      * @returns {String} plaintext
      */
-    Linnia.util.decrypt();
+    // Linnia.util.decrypt();
     // do something
   };
 
