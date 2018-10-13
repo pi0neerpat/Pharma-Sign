@@ -1,7 +1,11 @@
 package-lock.json
 truffle-config.js
 
-
+<<<<<<< HEAD
+config.js
+=======
+config.js 
+>>>>>>> c3e6d358ff4e44dbc7ddf5d776246bc8d2f8df1b
 # Logs
 logs
 *.log
