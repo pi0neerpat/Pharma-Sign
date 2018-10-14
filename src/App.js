@@ -99,11 +99,18 @@ class App extends Component {
     uploadPrescriptionToIPFS = (e, encryptedPrescription) => {
         var IPFSHash = "";
 
-        ipfsWrapper.files.add(encryptedPrescription, (err, ipfsHash) => {
+        try
+        {
+          ipfsWrapper.files.add(encryptedPrescription, (err, ipfsHash) => {
 
-            console.log('upload worked', ipfsHash);
-            IPFSHash = ipfsHash;
-        });
+              console.log('upload worked', ipfsHash);
+              IPFSHash = ipfsHash;
+          });
+        }
+        catch (err)
+        {
+          console.log('issues while uploading.', err);
+        }
 
         return IPFSHash;
     };
