@@ -22,7 +22,7 @@ import {
   Label
 } from "semantic-ui-react";
 
-const fs = require("fs-extra");
+// import fs from "fs-extra";
 import ipfsWrapper from "./ipfs";
 import contract from "truffle-contract";
 
@@ -177,11 +177,11 @@ class App extends Component {
 
   downloadIPFSPrescription = async prescriptionIPFSHash => {
     var encryptedPrescription = "";
-    ipfsWrapper.files.get(prescriptionIPFSHash, function(err, files) {
-      files.forEach(file => {
-        encryptedPrescription = file.content.toString("utf8");
-      });
-    });
+    // ipfsWrapper.files.get(prescriptionIPFSHash, function(err, files) {
+    //   files.forEach(file => {
+    //     encryptedPrescription = file.content.toString("utf8");
+    //   });
+    // });
 
     console.log("downloaded file", encryptedPrescription);
     return encryptedPrescription;
@@ -310,7 +310,8 @@ class App extends Component {
     return (
       <div>
         <QRCode
-          value="{this.state.encryptPrescr}"
+          hidden={!this.state.encryptedPrescr}
+          value={`${this.state.encryptedPrescr}`}
           errorCorrection={"Q"}
           color={"#67a814"}
           size={175}
