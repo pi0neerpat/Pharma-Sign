@@ -29,19 +29,23 @@ import web3 from "./ethereum/web3";
 
 class App extends Component {
   state = {
-    IPFSHash: "",
     patientName: "",
     patientDOB: "",
     doctorName: "",
     drugName: "",
     drugQuantity: "",
+    IPFSHash: "",
     hasError: false,
     pharmacyAddress: "0x94A5168C78e41c637C1B45544363d76034949Dc5",
     pharmacyPublicKey:
       "2b949f11b48fff00a4d15bd26abd373fe69f71559d8613c179d6c6d146c4a814f12eaa24878e6fb63ad6843558bb2ae0bc1043fd96bfe0fcc8a7f81e88768a17",
     pharmacyPrivateKey:
       "0xd42ea3b08d23fc87e04fba10acafaff85bb01827fdc6a0547b7de59a347abfd5",
-    doctorAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789"
+    doctorAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789",
+    loadingDoctor: false,
+    errorMessageDoctor: "",
+    loadingPharmacy: false,
+    errorMessagePharmacy: ""
   };
 
   componentDidMount = () => {
@@ -57,6 +61,7 @@ class App extends Component {
   };
 
   handleSubmitPrescription = async () => {
+    this.setState({ loadingDoctor: true, errorMessageDoctor: "" });
     const {
       patientName,
       patientDOB,
@@ -74,8 +79,10 @@ class App extends Component {
     };
     const prescriptionString = JSON.stringify(prescriptionObject);
     const encryptedPrescription = this.encryptPrescription(prescriptionString);
-    const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
-    const txReceipt = await this.submitHashToChain(IPFSHash);
+    // const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
+    const IPFSHash = "abc1234567";
+    this.submitHashToChain(IPFSHash);
+    this.setState({ loadingDoctor: false });
   };
 
   encryptPrescription = async prescription => {
@@ -89,14 +96,17 @@ class App extends Component {
     return encryptedObject;
   };
 
-  uploadPrescriptionToIPFS = asycn (e, encryptedPrescription ) => {
+  uploadPrescriptionToIPFS = async encryptedPrescription => {
     var IPFSHash = "";
-
-    await ipfsWrapper.add(JSON.parse(new { encryptedPrescription }), (err, ipfsHash) => {
-      IPFSHash = ipfsHash;
-    });
-
-    return IPFSHash;
+    try {
+      await ipfsWrapper.add(encryptedPrescription, (err, ipfsHash) => {
+        IPFSHash = ipfsHash;
+      });
+      console.log(IPFSHash);
+      return IPFSHash;
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   submitHashToChain = async IPFSHash => {
@@ -107,16 +117,39 @@ class App extends Component {
     const instance = PrescriptionsRegistryContract.at(
       "0x0bfa1c4baa40d1b81def0c07f402692a62f66aef"
     );
-    const txReceipt = await instance.createPrescription(IPFSHash, {
+    const response = await instance.createPrescription(IPFSHash, {
       from: doctorAddress
     });
-
-    console.log(txReceipt);
-    return txReceipt;
+    const txReceiptURL = `https://ropsten.etherscan.io/tx/${response.tx}`;
+    this.setState({ txReceiptURL });
+    console.log(txReceiptURL);
   };
 
-  decryptPrescription = (e, { encryptPrescription }) => {
-    // do something
+  // Pharmacy methods
+  viewPrescription = async () => {
+    const { prescriptionIPFSHash } = this.state;
+    const encryptedPrescription = await this.downloadIPFSPrescription(
+      prescriptionIPFSHash
+    );
+    const decryptedPrescription = await this.decryptPrescription(
+      encryptedPrescription
+    );
+  };
+
+  downloadIPFSPrescription = async prescriptionIPFSHash => {
+    // get IPFS data
+    const encryptedPrescription = "";
+    return encryptedPrescription;
+  };
+
+  decryptPrescription = async encryptedPrescription => {
+    const { pharmacyPrivateKey } = this.state;
+    const decryptedPrescription = await EthCrypto.decryptWithPrivateKey(
+      pharmacyPrivateKey,
+      encryptedPrescription
+    );
+    const prescriptionObject = JSON.parse(decryptedPrescription);
+    return prescriptionObject;
   };
 
   renderInterface() {
@@ -145,7 +178,7 @@ class App extends Component {
     return (
       <Segment textAlign="left">
         <Form
-          error={!!this.state.errorMessage}
+          error={!!this.state.errorMessageDoctor}
           onSubmit={this.handleSubmitPrescription}
         >
           <Grid columns={2}>
@@ -155,7 +188,7 @@ class App extends Component {
                 name="doctorName"
                 label="Doctor Name"
                 placeholder="first-name last-name"
-                value={this.state.patientDOB}
+                value={this.state.doctorName}
                 onChange={this.handleChange}
               />
               <Form.Input
@@ -203,77 +236,25 @@ class App extends Component {
                 value={this.state.drugQuantity}
                 onChange={this.handleChange}
               />
-              <Button color="green" content="Submit" />
+              <Button
+                color="green"
+                content="Submit"
+                loading={this.state.loadingDoctor}
+              />
             </Grid.Column>
           </Grid>
           <Message error header="Oops!" content={this.state.errorMessage} />
+          <Message compact success hidden={!this.state.txReceiptURL}>
+            Success! View this transaction{" "}
+            <a href={this.state.txReceiptURL}>on etherescan</a>
+          </Message>
         </Form>
       </Segment>
     );
   }
 
   renderPharmacy() {
-
-    return (
-      <Segment textAlign="left">
-        <Form
-          error={!!this.state.errorMessage}
-          onSubmit={this.handleSubmitPrescription}
-        >
-          <Grid columns={2}>
-            <Grid.Column>
-              <Form.Input
-                inline
-                name="doctorName"
-                label="Doctor Name"
-                placeholder="first-name last-name"
-                value={this.state.patientDOB}
-                onChange={this.handleChange}
-              />
-              <Form.Input
-                inline
-                name="patientName"
-                label="Patient Name"
-                placeholder="first-name last-name"
-                value={this.state.patientName}
-                onChange={this.handleChange}
-              />
-              <Form.Input
-                inline
-                name="patientDOB"
-                label="Patient Date of Birth"
-                placeholder="mm/dd/yyyy"
-                value={this.state.patientDOB}
-                onChange={this.handleChange}
-              />
-            </Grid.Column>
-            <Grid.Column>
-              <Form.Input inline label="Drug Name">
-                {/* <Form.Dropdown
-                  placeholder="Main, Ropsten, Rinkeby ..."
-                  selection
-                  inline
-                  name="network"
-                  onChange={this.handleChange}
-                  options={[
-                    { key: "Main", value: "main", text: "Main" },
-                    { key: "Ropsten", value: "ropsten", text: "Ropsten" },
-                    { key: "Rinkeby", value: "rinkeby", text: "Rinkeby" },
-                    { key: "Kovan", value: "kovan", text: "Kovan" },
-                    { key: "local-host", value: "local", text: "local-host" }
-                  ]}
-                  value={this.state.network}
-                /> */}
-              </Form.Input>
-              <Button color="green" content="Submit" />
-              <p>makeadapp.com{this.state.mnemonic || "/ ..."}</p>
-            </Grid.Column>
-          </Grid>
-          <Message error header="Oops!" content={this.state.errorMessage} />
-        </Form>
-      </Segment>
-    );
-
+    return <Segment textAlign="left" />;
   }
 
   render() {
