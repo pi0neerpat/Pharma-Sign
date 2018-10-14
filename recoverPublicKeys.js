@@ -1,7 +1,7 @@
 const EthCrypto = require("eth-crypto");
 
 privateKeys = [
-  "0x96ec0e2cb7f9c8260e2e0fa33761a671a15d7f669825fe35f727774bd9881fb5"
+  "0xd42ea3b08d23fc87e04fba10acafaff85bb01827fdc6a0547b7de59a347abfd5"
 ];
 
 privateKeys.forEach(privateKey => {

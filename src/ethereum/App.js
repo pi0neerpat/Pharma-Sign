@@ -20,9 +20,6 @@ import {
 } from "semantic-ui-react";
 
 import ipfsWrapper from "./ipfs";
-import contract from "truffle-contract";
-
-import PrescriptionsRegistry from "./ethereum/PrescriptionsRegistry";
 
 // Components
 import web3 from "./ethereum/web3";
@@ -30,18 +27,11 @@ import web3 from "./ethereum/web3";
 class App extends Component {
   state = {
     IPFSHash: "",
-    patientName: "",
-    patientDOB: "",
-    doctorName: "",
-    drugName: "",
-    drugQuantity: "",
+    prescription: "",
     hasError: false,
-    pharmacyAddress: "0x94A5168C78e41c637C1B45544363d76034949Dc5",
-    pharmacyPublicKey:
-      "2b949f11b48fff00a4d15bd26abd373fe69f71559d8613c179d6c6d146c4a814f12eaa24878e6fb63ad6843558bb2ae0bc1043fd96bfe0fcc8a7f81e88768a17",
+    pharmacyAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789",
     pharmacyPrivateKey:
-      "0xd42ea3b08d23fc87e04fba10acafaff85bb01827fdc6a0547b7de59a347abfd5",
-    doctorAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789"
+      "0x59d0952923cc7f3f335af5e5156e2b7965d98545048b854902874e7da247f146"
   };
 
   componentDidMount = () => {
@@ -56,42 +46,38 @@ class App extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmitPrescription = async () => {
-    const {
-      patientName,
-      patientDOB,
-      doctorName,
-      drugName,
-      drugQuantity
-    } = this.state;
-
-    const prescriptionObject = {
-      doctorName: doctorName,
-      patientName: patientName,
-      patientDOB: patientDOB,
-      drugName: drugName,
-      drugQuantity: drugQuantity
-    };
-    const prescriptionString = JSON.stringify(prescriptionObject);
-    const encryptedPrescription = this.encryptPrescription(prescriptionString);
-    const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
-    const txReceipt = await this.submitHashToChain(IPFSHash);
+  handleSubmitPrescription = () => {
+    const { prescription } = this.state;
+    this.encryptPrescription(prescription).then(encryptedPrescription => {
+      this.uploadPrescriptionToIPFS(encryptedPrescription).then(IPFSHash =>
+        this.submitHashToChain(IPFSHash).then(txReceipt =>
+          this.setState({ txReceipt, IPFSHash })
+        )
+      );
+    });
   };
 
-  encryptPrescription = async prescription => {
-    const { pharmacyPublicKey } = this.state;
-    console.log("encrypting prescription");
-    const encryptedObject = await EthCrypto.encryptWithPublicKey(
-      pharmacyPublicKey,
-      prescription
-    );
-    console.log(JSON.stringify(encryptedObject));
-    return encryptedObject;
+  encryptPrescription = (e, { prescription }) => {
+    const { pharmacyPrivateKey } = this.state;
+    /**
+     * EIP 1098 (https://github.com/ethereum/EIPs/pull/1098)
+     * Encrypt
+     * @param {String} pubKeyTo
+     * @param {JSON} data Data to be encrypted (Has to be JSON Object)
+     * @returns {JSON} Encrypted message
+     */
+    const encryptedPrescription = "";
+    //  Linnia.util.encrypt(
+    //   pharmacyPrivateKey,
+    //   prescription
+    // );
+    return encryptedPrescription;
   };
 
-  uploadPrescriptionToIPFS = encryptedPrescription => {
-    console.log("uploading to IPFS");
+  uploadPrescriptionToIPFS = (e, { encryptedPrescription }) => {
+    // ipfs.add(JSON.stringify(encryptedPrescription));
     var IPFSHash = "testIPFSHash";
+
     ipfsWrapper.add(encryptedPrescription, (err, ipfsHash) => {
       IPFSHash = ipfsHash;
     });
@@ -99,23 +85,25 @@ class App extends Component {
     return IPFSHash;
   };
 
-  submitHashToChain = async IPFSHash => {
-    console.log("Submitting IPFS hash to ETH public");
-    const { doctorAddress } = this.state;
-    const PrescriptionsRegistryContract = contract(PrescriptionsRegistry);
-    PrescriptionsRegistryContract.setProvider(web3.currentProvider);
-    const instance = PrescriptionsRegistryContract.at(
-      "0x0bfa1c4baa40d1b81def0c07f402692a62f66aef"
-    );
-    const txReceipt = await instance.createPrescription(IPFSHash, {
-      from: doctorAddress
-    });
+  submitHashToChain = async (e, { IPFSHash }) => {
+    const txReceipt = "testTXReceipt";
+    const accounts = await web3.eth.getAccounts();
+    PrescriptionsRegistry.deployed().then(function(instance) {
+      instance.createPrescription.call(account_one, {from: accounts[0]});
+  return txReceipt;
 
-    console.log(txReceipt);
-    return txReceipt;
+}
   };
 
   decryptPrescription = (e, { encryptPrescription }) => {
+    /**
+     * EIP 1098 (https://github.com/ethereum/EIPs/pull/1098)
+     * Decrypt
+     * @param {String} privKey
+     * @param {String} encrypted Encrypted message
+     * @returns {String} plaintext
+     */
+    // Linnia.util.decrypt();
     // do something
   };
 
@@ -177,32 +165,22 @@ class App extends Component {
             </Grid.Column>
             <Grid.Column>
               <Form.Input inline label="Drug Name">
-                <Form.Dropdown
-                  placeholder=""
+                {/* <Form.Dropdown
+                  placeholder="Main, Ropsten, Rinkeby ..."
                   selection
                   inline
-                  name="drugName"
+                  name="network"
                   onChange={this.handleChange}
                   options={[
-                    {
-                      key: "Hydrocodone",
-                      value: "Hydrocodone",
-                      text: "Hydrocodone"
-                    },
-                    { key: "Methadone", value: "Methadone", text: "Methadone" },
-                    { key: "Codeine", value: "Codeine", text: "Codeine" }
+                    { key: "Main", value: "main", text: "Main" },
+                    { key: "Ropsten", value: "ropsten", text: "Ropsten" },
+                    { key: "Rinkeby", value: "rinkeby", text: "Rinkeby" },
+                    { key: "Kovan", value: "kovan", text: "Kovan" },
+                    { key: "local-host", value: "local", text: "local-host" }
                   ]}
-                  value={this.state.drugName}
-                />
+                  value={this.state.network}
+                /> */}
               </Form.Input>
-              <Form.Input
-                inline
-                name="drugQuantity"
-                label="Drug Quantity"
-                placeholder="mg"
-                value={this.state.drugQuantity}
-                onChange={this.handleChange}
-              />
               <Button color="green" content="Submit" />
             </Grid.Column>
           </Grid>
