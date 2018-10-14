@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-
+import { Modal } from "react-bootstrap";
 import EthCrypto from "eth-crypto";
+
+var QRCode = require("qrcode.react");
+
 //Styles
 import "./App.css";
 import {
@@ -29,26 +32,43 @@ import PrescriptionsRegistry from "./ethereum/PrescriptionsRegistry";
 import web3 from "./ethereum/web3";
 
 class App extends Component {
-  state = {
-    patientName: "",
-    patientDOB: "",
-    doctorName: "",
-    drugName: "",
-    drugQuantity: "",
-    IPFSHash: "",
-    hasError: false,
-    pharmacyAddress: "0x94A5168C78e41c637C1B45544363d76034949Dc5",
-    pharmacyPublicKey:
-      "2b949f11b48fff00a4d15bd26abd373fe69f71559d8613c179d6c6d146c4a814f12eaa24878e6fb63ad6843558bb2ae0bc1043fd96bfe0fcc8a7f81e88768a17",
-    pharmacyPrivateKey:
-      "0xd42ea3b08d23fc87e04fba10acafaff85bb01827fdc6a0547b7de59a347abfd5",
-    doctorAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789",
-    loadingDoctor: false,
-    errorMessageDoctor: "",
-    loadingPharmacy: false,
-    errorMessagePharmacy: "",
-    rxLookup: false
-  };
+  constructor(props) {
+    super(props);
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
+    this.state = {
+      patientName: "",
+      patientDOB: "",
+      doctorName: "",
+      drugName: "",
+      drugQuantity: "",
+      IPFSHash: "",
+      hasError: false,
+      show: false,
+      pharmacyAddress: "0x94A5168C78e41c637C1B45544363d76034949Dc5",
+      pharmacyPublicKey:
+        "2b949f11b48fff00a4d15bd26abd373fe69f71559d8613c179d6c6d146c4a814f12eaa24878e6fb63ad6843558bb2ae0bc1043fd96bfe0fcc8a7f81e88768a17",
+      pharmacyPrivateKey:
+        "0xd42ea3b08d23fc87e04fba10acafaff85bb01827fdc6a0547b7de59a347abfd5",
+      doctorAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789",
+      loadingDoctor: false,
+      errorMessageDoctor: "",
+      loadingPharmacy: false,
+      errorMessagePharmacy: "",
+      encryptedPrescr: "",
+      rxLookup: false
+    };
+  }
+
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
+  }
 
   componentDidMount = () => {
     this.loadRegistryContracts();
@@ -84,14 +104,17 @@ class App extends Component {
     const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
     // const IPFSHash = "abc1234567";
     this.submitHashToChain(IPFSHash);
+    //this.renderQR();
     this.setState({
       loadingDoctor: false,
       doctorName: "",
       patientName: "",
       patientDOB: "",
       drugName: "",
-      drugQuantity: ""
+      drugQuantity: "",
+      encryptedPrescr: JSON.stringify(encryptedPrescription)
     });
+    console.log("This is the state:" + this.state.encryptedPrescr);
   };
 
   encryptPrescription = async prescription => {
@@ -101,7 +124,11 @@ class App extends Component {
       pharmacyPublicKey,
       prescription
     );
-    console.log(JSON.stringify(encryptedObject));
+    console.log("This is the object: " + JSON.stringify(encryptedObject));
+    this.setState({
+      encryptedPrescr: JSON.stringify(encryptedObject, null, 1)
+    });
+    console.log("This is the state: " + this.state.encryptedPrescr);
     return encryptedObject;
   };
 
@@ -189,6 +216,7 @@ class App extends Component {
             {this.renderPharmacy()}
           </Grid.Column>
         </Grid>
+        <Segment>{this.renderQR()}</Segment>
       </div>
     );
   }
@@ -276,6 +304,20 @@ class App extends Component {
         </Segment>
       );
     }
+  }
+
+  renderQR() {
+    return (
+      <div>
+        <QRCode
+          value="{this.state.encryptPrescr}"
+          errorCorrection={"Q"}
+          color={"#67a814"}
+          size={175}
+        />
+        <div class="encryptedMessage">{this.state.encryptedPrescr}</div>
+      </div>
+    );
   }
 
   renderPrescription() {
