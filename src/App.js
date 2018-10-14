@@ -74,16 +74,20 @@ class App extends Component {
     return encryptedPrescription;
   };
 
-  uploadPrescriptionToIPFS = (e, { encryptedPrescription }) => {
-    // ipfs.add(JSON.stringify(encryptedPrescription));
-    var IPFSHash = "testIPFSHash";
+  uploadPrescriptionToIPFS = asycn (e, { encryptedPrescription }) => {
+    var IPFSHash = "";
 
-    ipfsWrapper.add(encryptedPrescription, (err, ipfsHash) => {
+    await ipfsWrapper.add(JSON.parse(new { encryptedPrescription }), (err, ipfsHash) => {
       IPFSHash = ipfsHash;
     });
 
     return IPFSHash;
   };
+
+ 
+};
+
+
 
   submitHashToChain = (e, { IPFSHash }) => {
     const txReceipt = "testTXReceipt";
@@ -186,7 +190,67 @@ class App extends Component {
     );
   }
   renderPharmacy() {
-    return <Segment textAlign="left" />;
+    
+    return (
+      <Segment textAlign="left">
+        <Form
+          error={!!this.state.errorMessage}
+          onSubmit={this.handleSubmitPrescription}
+        >
+          <Grid columns={2}>
+            <Grid.Column>
+              <Form.Input
+                inline
+                name="doctorName"
+                label="Doctor Name"
+                placeholder="first-name last-name"
+                value={this.state.patientDOB}
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                inline
+                name="patientName"
+                label="Patient Name"
+                placeholder="first-name last-name"
+                value={this.state.patientName}
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                inline
+                name="patientDOB"
+                label="Patient Date of Birth"
+                placeholder="mm/dd/yyyy"
+                value={this.state.patientDOB}
+                onChange={this.handleChange}
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <Form.Input inline label="Drug Name">
+                {/* <Form.Dropdown
+                  placeholder="Main, Ropsten, Rinkeby ..."
+                  selection
+                  inline
+                  name="network"
+                  onChange={this.handleChange}
+                  options={[
+                    { key: "Main", value: "main", text: "Main" },
+                    { key: "Ropsten", value: "ropsten", text: "Ropsten" },
+                    { key: "Rinkeby", value: "rinkeby", text: "Rinkeby" },
+                    { key: "Kovan", value: "kovan", text: "Kovan" },
+                    { key: "local-host", value: "local", text: "local-host" }
+                  ]}
+                  value={this.state.network}
+                /> */}
+              </Form.Input>
+              <Button color="green" content="Submit" />
+              <p>makeadapp.com{this.state.mnemonic || "/ ..."}</p>
+            </Grid.Column>
+          </Grid>
+          <Message error header="Oops!" content={this.state.errorMessage} />
+        </Form>
+      </Segment>
+    );
+    
   }
 
   render() {
