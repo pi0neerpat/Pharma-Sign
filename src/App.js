@@ -89,14 +89,28 @@ class App extends Component {
     return encryptedObject;
   };
 
-  uploadPrescriptionToIPFS = asycn (e, encryptedPrescription ) => {
+  uploadPrescriptionToIPFS = (e, encryptedPrescription ) => {
     var IPFSHash = "";
 
-    await ipfsWrapper.add(JSON.parse(new { encryptedPrescription }), (err, ipfsHash) => {
+    ipfsWrapper.files.add(encryptedPrescription, (err, ipfsHash) => {
+
+      console.log('upload worked',ipfsHash);
       IPFSHash = ipfsHash;
     });
 
     return IPFSHash;
+  };
+
+  //Getting the uploaded file via hash code.
+  downloadPrescriptionFromIPFS = (e, ipfsHash) => {
+    var encryptedPrescription = '';
+    ipfsWrapper.files.get(ipfsHash, function (err, files) {
+        files.forEach((file) => {
+          encryptedPrescription = file.content.toString('utf8');
+        });
+      });
+
+    return encryptedPrescription;
   };
 
   submitHashToChain = async IPFSHash => {
