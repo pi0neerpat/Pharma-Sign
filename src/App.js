@@ -74,7 +74,7 @@ class App extends Component {
     return encryptedPrescription;
   };
 
-  uploadPrescriptionToIPFS = asycn (e, { encryptedPrescription }) => {
+  uploadPrescriptionToIPFS = asycn (e, encryptedPrescription ) => {
     var IPFSHash = "";
 
     await ipfsWrapper.add(JSON.parse(new { encryptedPrescription }), (err, ipfsHash) => {
@@ -84,7 +84,24 @@ class App extends Component {
     return IPFSHash;
   };
 
- 
+   /*
+  downloadPrescriptionFromIPFS = asycn (e, ipfsHash ) => {
+    
+
+   
+    const getFileContentsFromIPFS = function(ipfsHash, callback) {
+    node.files.cat(ipfsHash, function(err, data) {
+        callback(err, data);
+    });
+};
+    
+    var encryptedPrescription = "";
+    await ipfsWrapper.add(JSON.parse(new { encryptedPrescription }), (err, ipfsHash) => {
+      IPFSHash = ipfsHash;
+    });
+
+    return IPFSHash;
+  };*/
 };
 
 
