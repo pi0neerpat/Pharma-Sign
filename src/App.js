@@ -21,12 +21,7 @@ import {
 } from "semantic-ui-react";
 
 // Other modules
-const IPFS = require("ipfs-mini");
-const ipfs = new IPFS({
-  host: "ipfs.infura.io",
-  port: 5001,
-  protocol: "https"
-});
+import ipfsWrapper from "./ipfs";
 var QRCode = require("qrcode.react");
 
 //Web3 and Contract for working with Ethereum
@@ -49,7 +44,7 @@ class App extends Component {
       "2b949f11b48fff00a4d15bd26abd373fe69f71559d8613c179d6c6d146c4a814f12eaa24878e6fb63ad6843558bb2ae0bc1043fd96bfe0fcc8a7f81e88768a17",
     pharmacyPrivateKey:
       "0xd42ea3b08d23fc87e04fba10acafaff85bb01827fdc6a0547b7de59a347abfd5",
-    doctorAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789",
+    doctorAddress: "0xd62911e9e87d3be4dafd05ae72b5ff1fdea1ef3e",
     loadingDoctor: false,
     errorMessageDoctor: "",
     loadingPharmacy: false,
@@ -59,7 +54,8 @@ class App extends Component {
     doctorValid: false,
     prescriptionValid: false,
     ipfsHashLookup: "",
-    encryptedPrescriptionLookup: ""
+    encryptedPrescriptionLookup: "",
+    encryptedPrescriptionFromIPFS: ""
   };
 
   componentDidMount = () => {
@@ -96,7 +92,6 @@ class App extends Component {
       prescriptionString
     );
     const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
-    this.submitHashToChain(IPFSHash);
     this.setState({
       loadingDoctor: false,
       doctorName: "",
@@ -124,25 +119,25 @@ class App extends Component {
   };
 
   uploadPrescriptionToIPFS = async encryptedPrescription => {
-    const hash = await ipfs.addJSON(
-      { somevalue: 2, name: "Nick" },
-      (err, result) => {
+    try {
+      await ipfsWrapper.addJSON(encryptedPrescription, (err, result) => {
+        console.log(err, result);
         this.setState({ IPFSHash: result });
-      }
-    );
-    return hash;
+      });
+    } catch (err) {}
   };
 
-  submitHashToChain = async IPFSHash => {
+  handleSubmitHashToChain = async () => {
     console.log("Submitting IPFS hash to ETH public");
-    const { doctorAddress } = this.state;
+    const { doctorAddress, IPFSHash } = this.state;
     const PrescriptionsRegistryContract = contract(PrescriptionsRegistry);
     PrescriptionsRegistryContract.setProvider(web3.currentProvider);
     const instance = PrescriptionsRegistryContract.at(
-      "0x0bfa1c4baa40d1b81def0c07f402692a62f66aef"
+      "0xC79222cC15180aB55D205864015389a8F49A79e7"
     );
     const response = await instance.createPrescription(IPFSHash, {
-      from: doctorAddress
+      from: doctorAddress,
+      gas: 100000
     });
     const txReceiptURL = `https://ropsten.etherscan.io/tx/${response.tx}`;
     this.setState({ txReceiptURL });
@@ -191,19 +186,22 @@ class App extends Component {
       drugQuantity: prescription.drugQuantity,
       doctorValid: true,
       prescriptionValid: true,
-      loading: false
+      loadingPharmacy: false
     });
   };
 
   downloadIPFSPrescription = async prescriptionIPFSHash => {
     var encryptedPrescription = "";
-    // ipfsWrapper.files.get(prescriptionIPFSHash, function(err, files) {
-    //   files.forEach(file => {
-    //     encryptedPrescription = file.content.toString("utf8");
-    //   });
-    // });
 
-    console.log("downloaded file", encryptedPrescription);
+    ipfsWrapper.catJSON(prescriptionIPFSHash, (err, result) => {
+      this.setState({
+        encryptedPrescriptionLookup: JSON.stringify(result),
+        loadingPharmacy: false
+      });
+      console.log(result);
+    });
+
+    console.log("downloaded file", JSON.stringify(encryptedPrescription));
     return encryptedPrescription;
   };
 
@@ -227,6 +225,11 @@ class App extends Component {
               Doctor <Header.Subheader>portal</Header.Subheader>
             </Header>
             {this.renderDoctor()}
+            <Grid.Row>
+              <Button onClick={this.handleSubmitHashToChain}>
+                Anchor to ETH Public
+              </Button>
+            </Grid.Row>
           </Grid.Column>
           <Grid.Column>
             <Header>
@@ -310,7 +313,7 @@ class App extends Component {
                 />
                 <Button
                   color="green"
-                  content="Submit"
+                  content="Encrypt Rx"
                   loading={this.state.loadingDoctor}
                 />
               </Grid.Column>
@@ -405,7 +408,7 @@ class App extends Component {
           />
           <Button
             color="blue"
-            content="Lookup from QR"
+            content="Decrypt and validate"
             loading={this.state.loadingPharmacy}
           />
           <Message
