@@ -19,6 +19,7 @@ import {
   Label
 } from "semantic-ui-react";
 
+const fs = require("fs-extra");
 import ipfsWrapper from "./ipfs";
 import contract from "truffle-contract";
 
@@ -80,8 +81,8 @@ class App extends Component {
     };
     const prescriptionString = JSON.stringify(prescriptionObject);
     const encryptedPrescription = this.encryptPrescription(prescriptionString);
-    // const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
-    const IPFSHash = "abc1234567";
+    const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
+    // const IPFSHash = "abc1234567";
     this.submitHashToChain(IPFSHash);
     this.setState({
       loadingDoctor: false,
@@ -104,19 +105,10 @@ class App extends Component {
     return encryptedObject;
   };
 
-  uploadPrescriptionToIPFS = (e, encryptedPrescription) => {
-    var IPFSHash = "";
-
-    try {
-      ipfsWrapper.files.add(encryptedPrescription, (err, ipfsHash) => {
-        console.log("upload worked", ipfsHash);
-        IPFSHash = ipfsHash;
-      });
-    } catch (err) {
-      console.log("issues while uploading.", err);
-    }
-
-    return IPFSHash;
+  uploadPrescriptionToIPFS = async encryptedPrescription => {
+    // const ipfsHash = await ipfsWrapper.add(testBuffer);
+    // console.log(ipfsHash);
+    // return ipfsHash;
   };
 
   submitHashToChain = async IPFSHash => {
@@ -202,82 +194,88 @@ class App extends Component {
   }
 
   renderDoctor() {
-    return (
-      <Segment textAlign="left">
-        <Form
-          error={!!this.state.errorMessageDoctor}
-          onSubmit={this.handleSubmitPrescription}
-        >
-          <Grid columns={2}>
-            <Grid.Column>
-              <Form.Input
-                inline
-                name="doctorName"
-                label="Doctor Name"
-                placeholder="first-name last-name"
-                value={this.state.doctorName}
-                onChange={this.handleChange}
-              />
-              <Form.Input
-                inline
-                name="patientName"
-                label="Patient Name"
-                placeholder="first-name last-name"
-                value={this.state.patientName}
-                onChange={this.handleChange}
-              />
-              <Form.Input
-                inline
-                name="patientDOB"
-                label="Patient Date of Birth"
-                placeholder="mm/dd/yyyy"
-                value={this.state.patientDOB}
-                onChange={this.handleChange}
-              />
-            </Grid.Column>
-            <Grid.Column>
-              <Form.Input inline label="Drug Name">
-                <Form.Dropdown
-                  placeholder=""
-                  selection
+    if (this.state.rxLookup === false) {
+      return (
+        <Segment textAlign="left">
+          <Form
+            error={!!this.state.errorMessageDoctor}
+            onSubmit={this.handleSubmitPrescription}
+          >
+            <Grid columns={2}>
+              <Grid.Column>
+                <Form.Input
                   inline
-                  name="drugName"
+                  name="doctorName"
+                  label="Doctor Name"
+                  placeholder="first-name last-name"
+                  value={this.state.doctorName}
                   onChange={this.handleChange}
-                  options={[
-                    {
-                      key: "Hydrocodone",
-                      value: "Hydrocodone",
-                      text: "Hydrocodone"
-                    },
-                    { key: "Methadone", value: "Methadone", text: "Methadone" },
-                    { key: "Codeine", value: "Codeine", text: "Codeine" }
-                  ]}
-                  value={this.state.drugName}
                 />
-              </Form.Input>
-              <Form.Input
-                inline
-                name="drugQuantity"
-                label="Drug Quantity"
-                placeholder="mg"
-                value={this.state.drugQuantity}
-                onChange={this.handleChange}
-              />
-              <Button
-                color="green"
-                content="Submit"
-                loading={this.state.loadingDoctor}
-              />
-            </Grid.Column>
-          </Grid>
-          <Message error header="Oops!" content={this.state.errorMessage} />
-          <Message compact success hidden={!this.state.txReceiptURL}>
-            Success! View this transaction{" "}
-            <a href={this.state.txReceiptURL}>on etherescan</a>
-          </Message>
-        </Form>
-      </Segment>
-    );
+                <Form.Input
+                  inline
+                  name="patientName"
+                  label="Patient Name"
+                  placeholder="first-name last-name"
+                  value={this.state.patientName}
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  inline
+                  name="patientDOB"
+                  label="Patient Date of Birth"
+                  placeholder="mm/dd/yyyy"
+                  value={this.state.patientDOB}
+                  onChange={this.handleChange}
+                />
+              </Grid.Column>
+              <Grid.Column>
+                <Form.Input inline label="Drug Name">
+                  <Form.Dropdown
+                    placeholder=""
+                    selection
+                    inline
+                    name="drugName"
+                    onChange={this.handleChange}
+                    options={[
+                      {
+                        key: "Hydrocodone",
+                        value: "Hydrocodone",
+                        text: "Hydrocodone"
+                      },
+                      {
+                        key: "Methadone",
+                        value: "Methadone",
+                        text: "Methadone"
+                      },
+                      { key: "Codeine", value: "Codeine", text: "Codeine" }
+                    ]}
+                    value={this.state.drugName}
+                  />
+                </Form.Input>
+                <Form.Input
+                  inline
+                  name="drugQuantity"
+                  label="Drug Quantity"
+                  placeholder="mg"
+                  value={this.state.drugQuantity}
+                  onChange={this.handleChange}
+                />
+                <Button
+                  color="green"
+                  content="Submit"
+                  loading={this.state.loadingDoctor}
+                />
+              </Grid.Column>
+            </Grid>
+            <Message error header="Oops!" content={this.state.errorMessage} />
+            <Message compact success hidden={!this.state.txReceiptURL}>
+              Success! View this transaction{" "}
+              <a href={this.state.txReceiptURL}>on etherescan</a>
+            </Message>
+          </Form>
+        </Segment>
+      );
+    }
   }
 
   renderPrescription() {
