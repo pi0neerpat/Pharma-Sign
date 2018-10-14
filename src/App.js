@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import EthCrypto from "eth-crypto";
 
-var QRCode = require("qrcode.react");
-
 //Styles
 import "./App.css";
 import {
@@ -11,7 +9,7 @@ import {
   // List,
   Button,
   // Table,
-  // Input,
+  Container,
   Message,
   Form,
   // Card,
@@ -22,53 +20,47 @@ import {
   Label
 } from "semantic-ui-react";
 
-// import fs from "fs-extra";
-import ipfsWrapper from "./ipfs";
-import contract from "truffle-contract";
+// Other modules
+const IPFS = require("ipfs-mini");
+const ipfs = new IPFS({
+  host: "ipfs.infura.io",
+  port: 5001,
+  protocol: "https"
+});
+var QRCode = require("qrcode.react");
 
+//Web3 and Contract for working with Ethereum
+import web3 from "./ethereum/web3";
+import contract from "truffle-contract";
 import PrescriptionsRegistry from "./ethereum/PrescriptionsRegistry";
 
-// Components
-import web3 from "./ethereum/web3";
-
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-
-    this.state = {
-      patientName: "",
-      patientDOB: "",
-      doctorName: "",
-      drugName: "",
-      drugQuantity: "",
-      IPFSHash: "",
-      hasError: false,
-      show: false,
-      pharmacyAddress: "0x94A5168C78e41c637C1B45544363d76034949Dc5",
-      pharmacyPublicKey:
-        "2b949f11b48fff00a4d15bd26abd373fe69f71559d8613c179d6c6d146c4a814f12eaa24878e6fb63ad6843558bb2ae0bc1043fd96bfe0fcc8a7f81e88768a17",
-      pharmacyPrivateKey:
-        "0xd42ea3b08d23fc87e04fba10acafaff85bb01827fdc6a0547b7de59a347abfd5",
-      doctorAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789",
-      loadingDoctor: false,
-      errorMessageDoctor: "",
-      loadingPharmacy: false,
-      errorMessagePharmacy: "",
-      encryptedPrescr: "",
-      rxLookup: false
-    };
-  }
-
-  handleClose() {
-    this.setState({ show: false });
-  }
-
-  handleShow() {
-    this.setState({ show: true });
-  }
+  state = {
+    patientName: "",
+    patientDOB: "",
+    doctorName: "",
+    drugName: "",
+    drugQuantity: "",
+    IPFSHash: "",
+    hasError: false,
+    show: false,
+    pharmacyAddress: "0x94A5168C78e41c637C1B45544363d76034949Dc5",
+    pharmacyPublicKey:
+      "2b949f11b48fff00a4d15bd26abd373fe69f71559d8613c179d6c6d146c4a814f12eaa24878e6fb63ad6843558bb2ae0bc1043fd96bfe0fcc8a7f81e88768a17",
+    pharmacyPrivateKey:
+      "0xd42ea3b08d23fc87e04fba10acafaff85bb01827fdc6a0547b7de59a347abfd5",
+    doctorAddress: "0x1BDd1734a0BF7870C20c794DeBB3C82FAbB66789",
+    loadingDoctor: false,
+    errorMessageDoctor: "",
+    loadingPharmacy: false,
+    errorMessagePharmacy: "",
+    encryptedPrescr: "",
+    rxLookup: false,
+    doctorValid: false,
+    prescriptionValid: false,
+    ipfsHashLookup: "",
+    encryptedPrescriptionLookup: ""
+  };
 
   componentDidMount = () => {
     this.loadRegistryContracts();
@@ -100,11 +92,11 @@ class App extends Component {
       drugQuantity: drugQuantity
     };
     const prescriptionString = JSON.stringify(prescriptionObject);
-    const encryptedPrescription = this.encryptPrescription(prescriptionString);
+    const encryptedPrescription = await this.encryptPrescription(
+      prescriptionString
+    );
     const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
-    // const IPFSHash = "abc1234567";
     this.submitHashToChain(IPFSHash);
-    //this.renderQR();
     this.setState({
       loadingDoctor: false,
       doctorName: "",
@@ -112,9 +104,9 @@ class App extends Component {
       patientDOB: "",
       drugName: "",
       drugQuantity: "",
-      encryptedPrescr: JSON.stringify(encryptedPrescription)
+      encryptedPrescr: JSON.stringify(encryptedPrescription),
+      IPFSHash: IPFSHash
     });
-    console.log("This is the state:" + this.state.encryptedPrescr);
   };
 
   encryptPrescription = async prescription => {
@@ -124,18 +116,21 @@ class App extends Component {
       pharmacyPublicKey,
       prescription
     );
-    console.log("This is the object: " + JSON.stringify(encryptedObject));
     this.setState({
       encryptedPrescr: JSON.stringify(encryptedObject, null, 1)
     });
-    console.log("This is the state: " + this.state.encryptedPrescr);
+    console.log(JSON.stringify(encryptedObject, null, 1));
     return encryptedObject;
   };
 
   uploadPrescriptionToIPFS = async encryptedPrescription => {
-    // const ipfsHash = await ipfsWrapper.add(testBuffer);
-    // console.log(ipfsHash);
-    // return ipfsHash;
+    const hash = await ipfs.addJSON(
+      { somevalue: 2, name: "Nick" },
+      (err, result) => {
+        this.setState({ IPFSHash: result });
+      }
+    );
+    return hash;
   };
 
   submitHashToChain = async IPFSHash => {
@@ -155,15 +150,37 @@ class App extends Component {
   };
 
   // Pharmacy methods
-  viewPrescription = async () => {
+  viewPrescriptionFromEncrypted = async () => {
     this.setState({
       loadingPharmacy: true,
       errorMessagePharmacy: "",
       rxLookup: true
     });
-    const { prescriptionIPFSHash } = this.state;
+    const { encryptedPrescriptionLookup } = this.state;
+    const prescription = await this.decryptPrescription(
+      encryptedPrescriptionLookup
+    );
+    this.setState({
+      doctorName: prescription.doctorName,
+      patientName: prescription.patientName,
+      patientDOB: prescription.patientDOB,
+      drugName: prescription.drugName,
+      drugQuantity: prescription.drugQuantity,
+      doctorValid: true,
+      prescriptionValid: true,
+      loadingPharmacy: false
+    });
+  };
+
+  viewPrescriptionFromIPFS = async () => {
+    this.setState({
+      loadingPharmacy: true,
+      errorMessagePharmacy: "",
+      rxLookup: true
+    });
+    const { ipfsHashLookup } = this.state;
     const encryptedPrescription = await this.downloadIPFSPrescription(
-      prescriptionIPFSHash
+      ipfsHashLookup
     );
     const prescription = await this.decryptPrescription(encryptedPrescription);
     this.setState({
@@ -171,7 +188,10 @@ class App extends Component {
       patientName: prescription.patientName,
       patientDOB: prescription.patientDOB,
       drugName: prescription.drugName,
-      drugQuantity: prescription.drugQuantity
+      drugQuantity: prescription.drugQuantity,
+      doctorValid: true,
+      prescriptionValid: true,
+      loading: false
     });
   };
 
@@ -191,9 +211,9 @@ class App extends Component {
     const { pharmacyPrivateKey } = this.state;
     const decryptedPrescription = await EthCrypto.decryptWithPrivateKey(
       pharmacyPrivateKey,
-      encryptedPrescription
+      JSON.parse(encryptedPrescription)
     );
-    console.log(decryptedPrescription);
+    console.log("decrypted Prescription: " + decryptedPrescription);
     const prescriptionObject = JSON.parse(decryptedPrescription);
     return prescriptionObject;
   };
@@ -309,14 +329,20 @@ class App extends Component {
   renderQR() {
     return (
       <div>
-        <QRCode
-          hidden={!this.state.encryptedPrescr}
-          value={`${this.state.encryptedPrescr}`}
-          errorCorrection={"Q"}
-          color={"#67a814"}
-          size={175}
-        />
-        <div class="encryptedMessage">{this.state.encryptedPrescr}</div>
+        <Segment textAlign="left" hidden={!this.state.encryptedPrescr}>
+          <Header>Your Prescription:</Header>
+          <QRCode
+            value={`{rx: ${this.state.encryptedPrescr}, ipfsHash: ${
+              this.state.IPFSHash
+            }`}
+            color={"#67a814"}
+            size={120}
+          />
+          <Container text>
+            <p>Encrypted Rx: {this.state.encryptedPrescr}</p>
+            <p>Rx IPFS Hash: {this.state.IPFSHash}</p>
+          </Container>
+        </Segment>
       </div>
     );
   }
@@ -327,7 +353,9 @@ class App extends Component {
       patientDOB,
       doctorName,
       drugName,
-      drugQuantity
+      drugQuantity,
+      doctorValid,
+      prescriptionValid
     } = this.state;
     if (this.state.rxLookup === true) {
       return (
@@ -337,6 +365,8 @@ class App extends Component {
           <p>Patient DOB: {patientDOB}</p>
           <p>Drug name: {drugName}</p>
           <p>Drug Quantity: {drugQuantity}</p>
+          <p>Doctor Verified: {doctorValid}</p>
+          <p>Prescription Valid: {prescriptionValid}</p>
         </Segment>
       );
     }
@@ -347,7 +377,7 @@ class App extends Component {
       <div>
         <Form
           error={!!this.state.errorMessageDoctor}
-          onSubmit={this.viewPrescription}
+          onSubmit={this.viewPrescriptionFromIPFS}
         >
           <Form.Input
             inline
@@ -357,9 +387,25 @@ class App extends Component {
             value={this.state.ipfsHashLookup}
             onChange={this.handleChange}
           />
+
           <Button
             color="blue"
-            content="Lookup"
+            content="Lookup from IPFS"
+            loading={this.state.loadingPharmacy}
+          />
+        </Form>
+        <Form onSubmit={this.viewPrescriptionFromEncrypted}>
+          <Form.Input
+            inline
+            name="encryptedPrescriptionLookup"
+            label="Encrypted prescription Lookup"
+            placeholder="Encrypted Rx"
+            value={this.state.encryptedPrescriptionLookup}
+            onChange={this.handleChange}
+          />
+          <Button
+            color="blue"
+            content="Lookup from QR"
             loading={this.state.loadingPharmacy}
           />
           <Message
