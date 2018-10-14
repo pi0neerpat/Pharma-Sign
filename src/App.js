@@ -96,18 +96,18 @@ class App extends Component {
     return encryptedObject;
   };
 
-  uploadPrescriptionToIPFS = async encryptedPrescription => {
-    var IPFSHash = "";
-    try {
-      await ipfsWrapper.add(encryptedPrescription, (err, ipfsHash) => {
-        IPFSHash = ipfsHash;
-      });
-      console.log(IPFSHash);
-      return IPFSHash;
-    } catch (e) {
-      console.log(e);
-    }
-  };
+    uploadPrescriptionToIPFS = (e, encryptedPrescription) => {
+        var IPFSHash = "";
+
+        ipfsWrapper.files.add(encryptedPrescription, (err, ipfsHash) => {
+
+            console.log('upload worked', ipfsHash);
+            IPFSHash = ipfsHash;
+        });
+
+        return IPFSHash;
+    };
+
 
   submitHashToChain = async IPFSHash => {
     console.log("Submitting IPFS hash to ETH public");
@@ -136,11 +136,17 @@ class App extends Component {
     );
   };
 
-  downloadIPFSPrescription = async prescriptionIPFSHash => {
-    // get IPFS data
-    const encryptedPrescription = "";
-    return encryptedPrescription;
-  };
+    downloadIPFSPrescription = async prescriptionIPFSHash => {
+        var encryptedPrescription = '';
+        ipfsWrapper.files.get(prescriptionIPFSHash, function (err, files) {
+            files.forEach((file) => {
+                encryptedPrescription = file.content.toString('utf8');
+            });
+        });
+
+        console.log('downloaded file', encryptedPrescription);
+        return encryptedPrescription;
+    };
 
   decryptPrescription = async encryptedPrescription => {
     const { pharmacyPrivateKey } = this.state;
