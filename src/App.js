@@ -45,7 +45,8 @@ class App extends Component {
     loadingDoctor: false,
     errorMessageDoctor: "",
     loadingPharmacy: false,
-    errorMessagePharmacy: ""
+    errorMessagePharmacy: "",
+    rxLookup: false
   };
 
   componentDidMount = () => {
@@ -82,7 +83,14 @@ class App extends Component {
     // const IPFSHash = await this.uploadPrescriptionToIPFS(encryptedPrescription);
     const IPFSHash = "abc1234567";
     this.submitHashToChain(IPFSHash);
-    this.setState({ loadingDoctor: false });
+    this.setState({
+      loadingDoctor: false,
+      doctorName: "",
+      patientName: "",
+      patientDOB: "",
+      drugName: "",
+      drugQuantity: ""
+    });
   };
 
   encryptPrescription = async prescription => {
@@ -127,18 +135,35 @@ class App extends Component {
 
   // Pharmacy methods
   viewPrescription = async () => {
+    this.setState({
+      loadingPharmacy: true,
+      errorMessagePharmacy: "",
+      rxLookup: true
+    });
     const { prescriptionIPFSHash } = this.state;
     const encryptedPrescription = await this.downloadIPFSPrescription(
       prescriptionIPFSHash
     );
-    const decryptedPrescription = await this.decryptPrescription(
-      encryptedPrescription
-    );
+    const prescription = await this.decryptPrescription(encryptedPrescription);
+    this.setState({
+      doctorName: prescription.doctorName,
+      patientName: prescription.patientName,
+      patientDOB: prescription.patientDOB,
+      drugName: prescription.drugName,
+      drugQuantity: prescription.drugQuantity
+    });
   };
 
   downloadIPFSPrescription = async prescriptionIPFSHash => {
     // get IPFS data
-    const encryptedPrescription = "";
+    const encryptedPrescription = {
+      iv: "79611985110a1d7b08d19aa8d829374f",
+      ephemPublicKey:
+        "0471706258c7e8710fe96487e2a11774e981a8be3fc02c23619f40fc3910895c117d6716e42149e4984b9195bbf0950e4604088dfaed743e221dd8f20073455495",
+      ciphertext:
+        "d1fb2d30528f6e33c861ea57a24023a786bcf121a0f5737fad02112f9d9e21058a79589d993f51c9fb53ebca73c495556cdbebdabd6293b9c1bb05aed3abf208e463795b92968b7619f06807094c0c8c20023d11e1115c12636f7b89de112617489eb7655eb642d6b32c18637481cffa654e72bbd3b90a6815805fc5f97f654c",
+      mac: "8431d368967a790d38e1c13adae71988c2c397badce357ab0fe79b8f9f7ba419"
+    };
     return encryptedPrescription;
   };
 
@@ -148,6 +173,7 @@ class App extends Component {
       pharmacyPrivateKey,
       encryptedPrescription
     );
+    console.log(decryptedPrescription);
     const prescriptionObject = JSON.parse(decryptedPrescription);
     return prescriptionObject;
   };
@@ -253,8 +279,56 @@ class App extends Component {
     );
   }
 
+  renderPrescription() {
+    const {
+      patientName,
+      patientDOB,
+      doctorName,
+      drugName,
+      drugQuantity
+    } = this.state;
+    if (this.state.rxLookup === true) {
+      return (
+        <Segment textAlign="left">
+          <p>Doctor name: {doctorName}</p>
+          <p>Patient name: {patientName}</p>
+          <p>Patient DOB: {patientDOB}</p>
+          <p>Drug name: {drugName}</p>
+          <p>Drug Quantity: {drugQuantity}</p>
+        </Segment>
+      );
+    }
+  }
+
   renderPharmacy() {
-    return <Segment textAlign="left" />;
+    return (
+      <div>
+        <Form
+          error={!!this.state.errorMessageDoctor}
+          onSubmit={this.viewPrescription}
+        >
+          <Form.Input
+            inline
+            name="ipfsHashLookup"
+            label="Lookup Prescription"
+            placeholder="IPFS hash"
+            value={this.state.ipfsHashLookup}
+            onChange={this.handleChange}
+          />
+          <Button
+            color="blue"
+            content="Lookup"
+            loading={this.state.loadingPharmacy}
+          />
+          <Message
+            error
+            header="Oops!"
+            content={this.state.errorMessagePharmacy}
+          />
+        </Form>
+        {this.renderPrescription()}
+      </div>
+    );
   }
 
   render() {
