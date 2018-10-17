@@ -10,14 +10,15 @@ Prevent fraud, reduce cost and improve expereices for Doctor, Pharmacy, and Pati
 
 ## Features Completed
 
-none
-
-## Planned
-
 - Encrypt prescription with pharmacy's public key
 - Upload encrypted prescription to IPFS
 - Write the IPFS location hash to ETH public
--
+
+## Planned
+
+- Validation of prescription
+- Rx expiration enforcement
+- more soon...
 
 ## Run the app
 
