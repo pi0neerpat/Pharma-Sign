@@ -6,7 +6,7 @@ Hack-the-epidemic hackathon project for preventing prescription fraud using bloc
 
 ## Mission statement
 
-Prevent fraud, reduce cost and improve expereices for Doctor, Pharmacy, and Patient in the prescription process.
+Prevent fraud, reduce cost and improve experiences for Doctor, Pharmacy, and Patients in the prescription process.
 
 ## Features Completed
 
