@@ -1,6 +1,6 @@
 <h1 align="center"> Pharma-Sign </h1>
 
-![logo](https://github.com/blockchainbuddha/Pharma-Sign/blob/master/pharma_sign_logo.png)
+![logo](https://github.com/blockchainbuddha/Pharma-Sign/blob/13aa213f1dc89567543647c0fbb6d625fb7a417d/pharma_sign_logo.png)
 
 Table of Contents
 =================
