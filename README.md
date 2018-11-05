@@ -8,9 +8,11 @@ Table of Contents
 * [Introduction](#intro)
 * [Mission statement](#mission)
 * [Key Features](#key_features)
-* [Planned Features]()
-* [Run the app]()
-* [Contact]()
+* [Planned Features](#planned_features)
+* [Run the app](#run)
+* [Smart contract example](#contract)
+* [Credits](#credits)
+* [Contact](#contact)
 
 <a name="intro"></a>
 ## Introduction
@@ -31,6 +33,7 @@ To prevent fraud, reduce costs, and improve experiences for Providers, Pharmacie
 - Store the IPFS location hash in smart contract on ETH-public
 - Encode address of ETH-public smart contract in QR code
 
+<a name="planned_features"></a>
 ## Planned features
 
 - Add Truffle/JS tests to ensure successfull encryption and decryption of prescriptions
@@ -41,6 +44,7 @@ To prevent fraud, reduce costs, and improve experiences for Providers, Pharmacie
 - Send generated QR codes to patient's mobile app, wallet, or uPort account
 - Use AI/Machine Learning to identify patterns and detect fraud/waste/abuse in prescription data
 
+<a name="run"></a>
 ## Run the app
 
 1.  Run `npm install`
@@ -48,6 +52,47 @@ To prevent fraud, reduce costs, and improve experiences for Providers, Pharmacie
 
 A local Ganache blockchain server will start concurrently for testing purposes.
 
+<a name="contract"></a>
+## Smart contract example - PrescriptionsRegistry.sol
+
+```solidity
+// This method creates a ledger in the chain for all Rx
+// The prescriptionHash represents a pointer to the IPFS resource as well as the contents of the resource
+
+function createPrescription(string prescriptionHash) public {
+
+  require(stringNotNullNorEmpty(prescriptionHash), 'A prescription hash must be provided');
+
+  // Require the hash is unique
+  require(!_prescriptionHashesInUse[prescriptionHash], 'The prescription hash is already in use.');
+
+  _prescriptions[prescriptionHash].PrescriptionHash = prescriptionHash;
+  _prescriptions[prescriptionHash].PrescriberAddress = msg.sender;      
+  _prescriptionHashesInUse[prescriptionHash] = true;
+        
+  // Increment prescription count
+  _count++;
+}
+    
+function getPrescriptionPrescriber(string prescriptionHash) public view returns (address) {
+  return _prescriptions[prescriptionHash].PrescriberAddress;
+}
+```
+<a name="credits"></a>
+## Credits
+This software uses the following development frameworks and open source packages:
+
+
+* [Truffle](https://truffleframework.com/docs) - A development framework for Ethereum which makes it easy to deploy contracts to both public and private networks.
+* [Ganache](https://truffleframework.com/ganache) - Quickly fire up a personal Ethereum network to run tests, execute commands and inspect state.
+* [Web3](https://github.com/ethereum/web3.js/) - A javascript API to allow decentralized applications to talk with a node. Maintained and managed by the core Ethereum project.
+* [IPFS](https://ipfs.io/) -  A protocol and network designed to create a content-addressable, peer-to-peer method of storing and sharing hypermedia in a distributed file system.
+* [Metamask](https://metamask.io/) - A browser extension that makes it easy for users to interact and sign transactions for decentralized applications.
+
+<a name="contact"></a>
 ## Contact
 
-[Patrick](https://twitter.com/pi0neerpat)
+[1. Patrick Gallagher](https://twitter.com/pi0neerpat)
+
+[2. Uzair Minhas](https://www.linkedin.com/in/uziminhas/)
+
