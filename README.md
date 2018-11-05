@@ -5,21 +5,24 @@
 Table of Contents
 =================
 
-* [Introduction]()
-* [Mission statement]()
-* [Key Features]()
+* [Introduction](#intro)
+* [Mission statement](#mission)
+* [Key Features](#key_features)
 * [Planned Features]()
 * [Run the app]()
 * [Contact]()
 
+<a name="intro"></a>
 ## Introduction
 
 Project for preventing prescription fraud using the Ethereum blockchain, as part of the "Hack the Epidemic" hackathon co-sponsored by ConsenSys Health and Booz Allen Hamilton (October 12-14, 2018).
 
+<a name="mission"></a>
 ## Mission statement
 
 To prevent fraud, reduce costs, and improve experiences for Providers, Pharmacies, and Patients in the prescription issuance process.
 
+<a name="key_features"></a>
 ## Key features
 
 - Fill out prescription data via ReactJS web form
