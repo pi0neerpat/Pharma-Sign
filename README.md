@@ -1,24 +1,25 @@
 # Pharma-Sign
 
-Hack-the-epidemic hackathon project for preventing prescription fraud using blockchain.
-
-![alt-text](https://github.com/blockchainbuddha/Pharma-Sign/blob/screengrab.png)
+Project for preventing prescription fraud using the Ethereum blockchain, as part of the "Hack the Epidemic" hackathon co-sponsored by ConsenSys Health and Booz Allen Hamilton (October 12-14, 2018).
 
 ## Mission statement
 
-Prevent fraud, reduce cost and improve experiences for Doctor, Pharmacy, and Patients in the prescription process.
+To prevent fraud, reduce costs, and improve experiences for Providers, Pharmacies, and Patients in the prescription issuance process.
 
-## Features Completed
+## Key Features
 
-- Encrypt prescription with pharmacy's public key
-- Upload encrypted prescription to IPFS
-- Write the IPFS location hash to ETH public
+- Fill out prescription data via ReactJS web form
+- Encrypt prescription data with pharmacy's public key
+- Upload encrypted prescription data to IPFS
+- Store the IPFS location hash in smart contract on ETH-public
+- Encode address of ETH-public smart contract in QR code
 
 ## Planned
 
-- Validation of prescription
-- Rx expiration enforcement
-- more soon...
+- Add Truffle/JS tests to ensure successfull encryption and decryption of prescriptions
+- Validate preferred pharmacy against External Pharmacy Registry via smart contract
+- Validate doctor's National Provider Identifier (NPI) number against External Provider Registry
+- Enforce prescription expiry date and number of refills
 
 ## Run the app
 
