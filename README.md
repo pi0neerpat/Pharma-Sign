@@ -9,7 +9,7 @@ Table of Contents
 * [Mission statement](#mission)
 * [Key Features](#key_features)
 * [Planned Features](#planned_features)
-* [Run the app](#run)
+* [Running the app](#run)
 * [Smart contract example](#contract)
 * [Credits](#credits)
 * [Contact](#contact)
@@ -44,12 +44,28 @@ To prevent fraud, reduce costs, and improve experiences for Providers, Pharmacie
 - Send generated QR codes to patient's mobile app, wallet, or uPort account
 - Use AI/Machine Learning to identify patterns and detect fraud/waste/abuse in prescription data
 
+<a name="diagram"></a>
+## Users, Roles, and Actions
+![logo](https://github.com/blockchainbuddha/Pharma-Sign/blob/master/pharma_sign_diagram.png)
+
 <a name="run"></a>
-## Run the app
+## Running the app
 
-1.  Run `npm install`
-2.  Run `npm start`
+<p>To clone and run this application, you'll need <a href="https://git-scm.com" rel="nofollow">Git</a> and <a href="https://nodejs.org/en/download/" rel="nofollow">Node.js</a> (which comes with <a href="http://npmjs.com" rel="nofollow">npm</a>) installed on your computer. From your command line:</p>
 
+```
+# Clone this repository
+$ git clone https://github.com/blockchainbuddha/Pharma-Sign
+
+# Go into the repository
+$ cd Pharma-Sign
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm start
+```
 A local Ganache blockchain server will start concurrently for testing purposes.
 
 <a name="contract"></a>
