@@ -108,7 +108,10 @@ This software uses the following development frameworks and open source packages
 <a name="contact"></a>
 ## Contact
 
-[1. Patrick Gallagher](https://twitter.com/pi0neerpat)
+* [Patrick G.](https://twitter.com/pi0neerpat)
+* [Uzair M.](https://www.linkedin.com/in/uziminhas/)
+* [Moises J.](https://www.linkedin.com/in/moisesjaramillo/)
+* [Changrong Ji](https://www.linkedin.com/in/changrongji/)
 
-[2. Uzair Minhas](https://www.linkedin.com/in/uziminhas/)
+
 
